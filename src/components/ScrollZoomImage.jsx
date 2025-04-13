@@ -1,12 +1,16 @@
+import useWindowSize from '@/hooks/useWindowSize';
 import { useState, useEffect } from 'react';
 import { createElement } from 'react';
 
-// סגנונות CSS בלי Tailwind
 const styles = {
   container: {
   },
   fixedContainer: {
     height: 900,
+    overflow: 'hidden'
+  },
+  fixedContainerMobile: {
+    height: 500,
     overflow: 'hidden'
   },
   imageWrapper: {
@@ -70,7 +74,7 @@ export default function ScrollZoomImage({
   subtitle = "גלול למטה כדי לראות את התמונה מתקרבת"
 }) {
   const [scale, setScale] = useState(minScale);
-  
+  const {width} = useWindowSize(); // קריאה לפונקציה כדי לעדכן את גובה התמונה אם יש צורך
   // פונקציה שתטפל באירוע הגלילה
   const handleScroll = () => {
     // חישוב אחוז הגלילה של הדף (0-1)
@@ -104,7 +108,7 @@ export default function ScrollZoomImage({
 
   return (
     <div style={styles.container}>
-      <div style={styles.fixedContainer}>
+      <div style={width <= 550 ? styles.fixedContainerMobile : styles.fixedContainer}>
         <div style={styles.imageWrapper}>
           <img 
             src={imageSrc} 

@@ -1,5 +1,3 @@
-import { InstagramEmbed } from "react-social-media-embed";
-import ReactPlayer from "react-player";
 import { useEffect, useState } from "react";
 import ScrollZoomImage from "./ScrollZoomImage";
 
@@ -49,8 +47,8 @@ export default function Introduction() {
               </strong>
             </p>
             <button onClick={() => {}} className="details-btn">
-            לקבלת פרטים נוספים
-          </button>
+              לקבלת פרטים נוספים
+            </button>
           </div>
         </div>
 
@@ -62,7 +60,7 @@ export default function Introduction() {
             alignItems: "center",
           }}
         >
-          <video controls preload="metadata" width="640" height="360">
+          <video controls preload="metadata" width="720" height="480">
             <source src="/assets/Firstvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -71,8 +69,11 @@ export default function Introduction() {
 
       <div className="idan-container">
         <div className="images">
-        <ScrollZoomImage imageSrc={"/assets/images/idan.jpg"} maxScale={1}/>
-
+          <ScrollZoomImage
+            imageSrc={"/assets/images/idan.jpg"}
+            maxScale={1.5}
+            minScale={1}
+          />
         </div>
 
         <div className="text">
@@ -108,8 +109,11 @@ export default function Introduction() {
 
       <div className="first-container">
         <div className="images">
-
-          <ScrollZoomImage imageSrc={"/assets/images/intro-2.jpeg"} />
+          <ScrollZoomImage
+            imageSrc={"/assets/images/intro-2.jpeg"}
+            maxScale={1.7}
+            minScale={1}
+          />
         </div>
 
         <div className="text">
@@ -141,17 +145,18 @@ export default function Introduction() {
 
       <div className="second-container">
         <div className="images">
-
-                    <ScrollZoomImage imageSrc={"/assets/images/intro-1.png"} />
-
+          <ScrollZoomImage
+            imageSrc={"/assets/images/intro-1.jpeg"}
+            maxScale={1.7}
+            minScale={1}
+          />
         </div>
 
         <div className="text">
-          <div className="title-first green">
+          <div className="title-first">
             הדרך להצלחה שלך
             <br />
-            <span className="title-second">מתחילה</span>
-            <span className="title-second">כאן</span>
+            <span className="title-second">מתחילה כאן</span>
           </div>
 
           <div className="second-p">
@@ -170,7 +175,75 @@ export default function Introduction() {
               <br />
             </p>
           </div>
+          <button onClick={() => {}} className="details-btn-dark">
+            לקבלת פרטים נוספים
+          </button>
+        </div>
+      </div>
+
+      <div className="first-container" style={{padding: "5% 0"}}>
+        <div className="images">
+          <div
+            style={{
+              display: "flex",
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <video controls preload="metadata" width="720" height="480">
+              <source src="/assets/early.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div className="text">
+          <div className="title-first green">
+            חושבים שמאוחר מדי?
+            <br />
+            <span className="title-second">או בכלל מוקדם מדי?</span>
+          </div>
+
+          <div className="second-p">
+            <p>תצפו בקטע קצר מאחד השיעורים אצלנו באקדמיה, ותבינו שהכל אפשרי.</p>
+          </div>
           <button onClick={() => {}} className="details-btn">
+            לקבלת פרטים נוספים
+          </button>
+        </div>
+      </div>
+
+      
+      <div className="second-container" style={{padding: "5% 0"}}>
+      <div className="images">
+          <div
+            style={{
+              display: "flex",
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <video controls preload="metadata" width="720" height="480" >
+              <source src="/assets/baha.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div className="text">
+          <div className="title-first">
+            כבר למדת משהו בעבר
+            <br />
+            <span className="title-second">ועדיין לא מרגיש הבוס של עצמך?</span>
+          </div>
+
+          <div className="second-p">
+            <p>בוא ותראה מה יש לבהא בוגר האקדמייה שלנו לומר!
+            </p>
+          </div>
+          <button onClick={() => {}} className="details-btn-dark">
             לקבלת פרטים נוספים
           </button>
         </div>

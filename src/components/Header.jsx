@@ -1,8 +1,6 @@
-import { SocialIcon } from "react-social-icons";
-import useWindowSize from "../hooks/useWindowSize";
+import Navbar from "./Navbar";
 
 export default function Header({ contactRef }) {
-  const { width } = useWindowSize();
 
   const scrollToComponent = () => {
     if (contactRef.current) {
@@ -17,8 +15,9 @@ export default function Header({ contactRef }) {
         <source src={"/assets/1.mp4"} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <Navbar />
       <div className="content App-logo-bg">
-        <img src={"/assets/logo.svg"} className="App-logo" alt="logo" />
+        {/* <img src={"/assets/logo.svg"} className="App-logo" alt="logo" /> */}
 
         <div className="titles">
           <div className="row line-container">
@@ -44,24 +43,6 @@ export default function Header({ contactRef }) {
       </div>
         </div>
       </div>
-
-
-      {width > 520 && (
-        <div className="socialsrow">
-          <SocialIcon
-            url="https://www.tiktok.com/@idan_mavlayev?lang=he-IL"
-            style={{ width: "30px", height: "30px" }}
-          />
-          <SocialIcon
-            url="https://www.instagram.com/imbarber_academy"
-            style={{ width: "30px", height: "30px" }}
-          />
-          <SocialIcon
-            url="https://www.facebook.com/idanbarber"
-            style={{ width: "30px", height: "30px" }}
-          />
-        </div>
-      )}
     </header>
   );
 }

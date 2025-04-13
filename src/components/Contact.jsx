@@ -43,48 +43,6 @@ const Contact = forwardRef(function Contact(props, ref) {
           פלאפון: 052-7481028
         </p>
         <Form />
-        {/* <form
-          className="col contact-container"
-          dir="rtl"
-          onSubmit={handleSubmit}
-          ref={formRef}
-        >
-          <TextField
-            fullWidth
-            id="input-name"
-            label="שם מלא"
-            variant="filled"
-            name="user_name"
-          />
-          <TextField
-            fullWidth
-            id="input-email"
-            label="אימייל"
-            variant="filled"
-            name="user_email"
-          />
-          <TextField
-            fullWidth
-            id="input-phone"
-            label="פלאפון"
-            variant="filled"
-            name="user_phone"
-          />
-          <TextField
-            id="f-multiline-static"
-            label="פירוט ההודעה"
-            multiline
-            fullWidth
-            rows={4}
-            variant="filled"
-            name="message"
-            value={content}
-          />
-
-          <Button variant="outlined" type="submit">
-            שליחה
-          </Button>
-        </form> */}
       </div>
       <div className="left-pane">
         {width < 520 ? (

@@ -3,8 +3,9 @@ $light-gold: #ddb900;
 $light-brown: #cc7a00;
 $dark-grey: #181a18;
 $silver: #e5dada;
-$blueberry: #957fef;
+$blueberry: #9680ef;
 $pistachio: #9fcc2e;
+$warmwhite: #fff4da;
 input[type="radio"] {
   background-color: white;
 }
@@ -89,7 +90,9 @@ a {
   color: black;
 
   position: relative;
-  height: 15vw;
+  height: 220px;
+  margin-top: 2%;
+  margin-bottom: 5%;
 }
 .followus p {
   z-index: 1;
@@ -106,7 +109,7 @@ a {
 }
 .socialsrow-follow {
   position: absolute;
-  top: 68%;
+  top: 70%;
   transform: translate(-50%, -50%);
   display: flex;
   left: 50%;
@@ -187,6 +190,20 @@ a {
   overflow: hidden;
   font-size: 1.2rem;
   color: $dark-grey;
+  position: relative;
+  font-family: inherit;
+  border: 0;
+  width: 250px;
+  margin: 0 auto;
+  border-radius: 18px;
+  font-weight: 600;
+}
+.details-btn-dark {
+  padding: 16px;
+  background-color: $dark-grey;
+  overflow: hidden;
+  font-size: 1.2rem;
+  color: white;
   position: relative;
   font-family: inherit;
   border: 0;
@@ -476,6 +493,7 @@ background-color: #977011;
   align-items: center;
   padding: 3% 0;
   width: 100%;
+  margin-bottom: 2%;
 }
 
 .third-section .details {
@@ -483,7 +501,7 @@ background-color: #977011;
 }
 .course-container {
   padding: 3% 5%;
-  width: 80vw;
+  width: 90%;
 }
 .course-container h3 {
   font-size: 1.35rem;;
@@ -521,7 +539,7 @@ background-color: #977011;
   background-color: #292929 !important;
 }
 .images {
-  flex: 2.5;
+  flex: 2.17;
   position: relative;
   width: 100%;
 }
@@ -547,10 +565,10 @@ background-color: #977011;
   width: 30%;
 }
 .video-container {
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
 }
 .first-container {
   display: flex;
@@ -575,8 +593,9 @@ background-color: #977011;
   width: 100%;
   overflow: hidden;
   flex-direction: row-reverse;
-  background-color: $dark-grey;
+  background-color: #cc7a00;
   background-image: url("/assets/lined-paper-2.png");
+  color: $dark-grey;
 }
 
 .second-container .text {
@@ -631,6 +650,13 @@ background-color: #977011;
     font-weight: 700;
 
 }
+.title-second-dark {
+  font-size: 4rem;
+  margin-left: 10px;
+    color: $dark-grey;
+    font-weight: 700;
+
+}
 .title-third {
   font-size: 4rem;
 
@@ -672,12 +698,16 @@ text-align: center;
 }
 .recommendation {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 4%;
   background-color: #292929;
   border-radius: 25px;
   padding: 2%;
   gap: 5px;
+}
+.recommendation h2 {
+  font-size: 2rem;
+
 }
 .recommendation .name {
   font-size: 1.3rem;
@@ -700,6 +730,7 @@ text-align: center;
 .abdev {
   display: flex;
   justify-content: center;
+  margin: 5%;
 }
 
 .abdev-img {
@@ -713,14 +744,14 @@ text-align: center;
   transform: rotate(-15deg);
 }
 .review-container {
-  width: 30%;
+  width: 25%;
   background-color: rgba(202, 202, 202, 0.1);
   border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2%;
-  flex: 1;
+  padding: 1%;
+  margin: 0.5%;
 }
 .review-container p {
   font-size: 0.9vw;
@@ -852,15 +883,33 @@ text-align: center;
   }
   .review-container .name {
   }
-
+  .recommendation h2 {
+    text-align: center;
+  }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 550px) {
+  .title-first {
+    margin-bottom: 5%;
+  }
+  .recommendation h2 {
+    text-align: center;
+  }
+  .image-intro {
+  height: 500px;
+  }
+  .first-container, .second-container, .idan-container {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
   .socialsrow-follow {
     top: 85%;
   }
   .followus {
-    margin: 10% 0;
+    margin: 5% 0;
+    height: 100px;
+    margin-bottom: 15%;
+
   }
   .images {
     min-height: 360px;
@@ -872,23 +921,25 @@ text-align: center;
   }
   .rectangle-yellow {
     position: absolute;
-    width: 78vw;
-    height: 20vw;
+    width: 350px;
+    height: 100px;
     top: 75% !important;
   }
   .contact-section .right-pane {
     padding: 5%;
   }
   .rectangle-white {
-    width: 74vw;
-    height: 20vw;
+    width: 350px;
+    height: 100px;
 
   }
   .idan-container {
     flex-direction: column;
     height: unset;
     padding-bottom: 8%;
-    margin-top: 5%;
+  }
+  .images {
+    margin-bottom: 5%;
   }
   .contact-container {
     margin-top: 5%;
@@ -898,7 +949,7 @@ text-align: center;
   .idan-container .text p {
   }
   .first-section .left-pane {
-    margin-top: 5%;
+    margin: 5% 0;
     padding: 0 5%;
   }
   .line-container {
@@ -944,15 +995,16 @@ width: 90%;
   .appoint {
     font-weight: 400;
     white-space: nowrap;
-    width: 60vw;
+    width: 250px;
     margin-bottom: 2%;
-    padding: 2%;
+    padding: 3%;
   }
   .App-header .contact-btn {
     font-weight: 400;
     white-space: nowrap;
-    width: 60vw;
-    padding: 2%;
+    width: 250px;
+    margin-bottom: 2%;
+    padding: 3%;
   }
   .App-header .subtitle {
   }
@@ -960,7 +1012,7 @@ width: 90%;
     text-align: center;
   }
   .third-section {
-    margin: 5% 0;
+    margin: 2% 0;
   }
   .first-section .right-pane {
     text-align: center;
