@@ -17,7 +17,7 @@ export default function ApplicationForm() {
       fontFamily: "Arial, sans-serif",
       direction: "rtl",
       color: "#181a18",
-      fontSize: "1.25rem",
+      fontSize: isMobile ? "1rem" : "1.25rem",
     },
     paper: {
       backgroundColor: "#ffba5191",
@@ -29,7 +29,7 @@ export default function ApplicationForm() {
       color: "#181a18",
       textAlign: "center",
       marginBottom: "32px",
-      fontSize: "28px",
+      fontSize: "22px",
       fontWeight: "bold",
     },
     formControl: {

@@ -134,7 +134,7 @@ a {
   transform: rotate(3deg) translate(-50%, -50%);
   top: 62%;
   left: 50%;         /* Horizontally center */
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 }
 .rectangle-white {
   position: absolute;
@@ -145,7 +145,7 @@ a {
   transform: rotate(-3deg) translate(-50%, -50%); /* Tilt the square by 45 degrees */
   top: 53%;          /* Vertically center */
   left: 51%;         /* Horizontally center */
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 
 }
 .App-logo {
@@ -354,7 +354,7 @@ background-color: #977011;
 .first-section .special-bg {
   padding: 3% 0;
   border-radius: 10px;
-  background-image: url("/imbarbernext/assets/brush2.png");
+  background-image: url("/assets/brush2.png");
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -414,7 +414,7 @@ background-color: #977011;
   max-width: 50%;
 }
 .second-section {
-  background-image: url("/imbarbernext/assets/2.png");
+  background-image: url("/assets/2.png");
   background-position-y: 65%;
   height: 80vh;
   overflow: hidden;
@@ -465,7 +465,7 @@ background-color: #977011;
 
 .brush {
   text-align: center;
-  background-image: url("/imbarbernext/assets/brush.png");
+  background-image: url("/assets/brush.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -576,7 +576,7 @@ background-color: #977011;
   overflow: hidden;
   flex-direction: row;
   background-color: $dark-grey;
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 }
 
 .first-container .text {
@@ -594,7 +594,7 @@ background-color: #977011;
   overflow: hidden;
   flex-direction: row-reverse;
   background-color: #cc7a00;
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
   color: $dark-grey;
 }
 
@@ -613,7 +613,7 @@ background-color: #977011;
   overflow: hidden;
   flex-direction: row-reverse;
   background-color: #cc7a00;
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 }
 
 .idan-container .text {
@@ -707,6 +707,7 @@ text-align: center;
 }
 .recommendation h2 {
   font-size: 2rem;
+  text-align: center;
 
 }
 .recommendation .name {
@@ -744,14 +745,25 @@ text-align: center;
   transform: rotate(-15deg);
 }
 .review-container {
-  width: 25%;
+  width: 400px;
   background-color: rgba(202, 202, 202, 0.1);
   border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 1%;
-  margin: 0.5%;
+  margin-left: 0.5%;
+
+}
+.review-container-mobile {
+  width: 185px;
+  background-color: rgba(202, 202, 202, 0.1);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1%;
+  margin-left: 0.5%;
 }
 .review-container p {
   font-size: 0.9vw;
@@ -839,23 +851,23 @@ text-align: center;
 @media only screen and (max-width: 1024px) {
   .App-header .titles {
     width: 90%;
-
+    padding: 10% 5% 0 5%;
   }
   .review-container .name {
     font-size: 1rem;
   }
   .rectangle-yellow {
     position: absolute;
-    width: 380px;
-    height: 130px;
+    width: 350px;
+    height: 110px;
     top: 62% !important;
   }
   .contact-section .right-pane {
     padding: 5%;
   }
   .rectangle-white {
-    width: 380px;
-    height: 130px;
+    width: 350px;
+    height: 110px;
 
   }
   .title-second {
@@ -881,9 +893,6 @@ text-align: center;
   .first-section h2, .second-section h2, .third-section h2, .gallery h2 {
     font-size: 1.8rem;
   }
-  .course-container {
-    padding: 0 0 5% 0;
-  }
   .first-section p {
   }
   .first-section .special-bg {
@@ -903,18 +912,53 @@ text-align: center;
     flex-direction: column;
   }
   .review-container p {
-    font-size: 1.0rem;
+    font-size: 0.8rem;
   }
   .review-container .name {
   }
   .recommendation h2 {
     text-align: center;
+    
   }
+  .first-container .text {
+    padding: 5%;
+  }
+  .second-container .text {
+    padding: 5%;
+  }
+  .idan-container .text {
+    padding: 5%;
+  }
+  
 }
 
 @media only screen and (max-width: 768px) {
+  .contact-section p {
+    font-size: 1rem;
+  }
+  .App-header .english-title {
+    font-size: 1rem;
+  }
+  .courseheader-column-title-large {
+    font-size: 1.2rem;
+}
+  .course-container li {
+    font-size: 1rem;
+}
+  .first-p p {
+    font-size: 1rem;
+  }
+  .title-second {
+    font-size: 2.3rem;
+  }
+  .details-btn, .details-btn-dark {
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 12px;
+  }
   .title-first {
     margin-bottom: 5%;
+    font-size: 2.1rem;
   }
   .recommendation h2 {
     text-align: center;
@@ -977,7 +1021,8 @@ width: 90%;
     display: block;
   }
   .App-header .title {
-    font-size: 3.6rem;
+    font-size: 2.6rem;
+
   }
   .App-header .titles {
     width: 100%;
@@ -985,6 +1030,7 @@ width: 90%;
   }
   .App-header .subtitle {
     text-align: center;
+    font-size: 1rem;
   }
   .video-container {
     margin-bottom: 3%;
@@ -1011,14 +1057,18 @@ width: 90%;
     white-space: nowrap;
     width: 250px;
     margin-bottom: 2%;
-    padding: 3%;
+    font-size: 1.0rem;
+border-radius: 12px;
+padding: 12px;
   }
   .App-header .contact-btn {
     font-weight: 400;
     white-space: nowrap;
     width: 250px;
     margin-bottom: 2%;
-    padding: 3%;
+    padding: 12px;    font-size: 1rem;
+    border-radius: 12px;
+
   }
   .App-header .subtitle {
   }
@@ -1032,6 +1082,8 @@ width: 90%;
     text-align: center;
   }
   .first-section p {
+    font-size: 1.0rem;
+
   }
   .first-section .special-bg {
   }
@@ -1098,8 +1150,11 @@ width: 90%;
   .recommendation {
     flex-direction: column;
   }
-  .review-container {
-    width: 96%;
+  .gallery p {
+    font-size: 1rem;
+  }
+  .recommendation .name {
+      font-size: 0.8rem;
   }
   .review-container p {
   }

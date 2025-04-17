@@ -128,7 +128,7 @@ a {
   transform: rotate(3deg) translate(-50%, -50%);
   top: 62%;
   left: 50%; /* Horizontally center */
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 }
 
 .rectangle-white {
@@ -140,7 +140,7 @@ a {
   transform: rotate(-3deg) translate(-50%, -50%); /* Tilt the square by 45 degrees */
   top: 53%; /* Vertically center */
   left: 51%; /* Horizontally center */
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 }
 
 .App-logo {
@@ -355,7 +355,7 @@ a {
 .first-section .special-bg {
   padding: 3% 0;
   border-radius: 10px;
-  background-image: url("/imbarbernext/assets/brush2.png");
+  background-image: url("/assets/brush2.png");
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -423,7 +423,7 @@ a {
 }
 
 .second-section {
-  background-image: url("/imbarbernext/assets/2.png");
+  background-image: url("/assets/2.png");
   background-position-y: 65%;
   height: 80vh;
   overflow: hidden;
@@ -472,7 +472,7 @@ a {
 
 .brush {
   text-align: center;
-  background-image: url("/imbarbernext/assets/brush.png");
+  background-image: url("/assets/brush.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -598,7 +598,7 @@ a {
   overflow: hidden;
   flex-direction: row;
   background-color: #181a18;
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 }
 
 .first-container .text {
@@ -617,7 +617,7 @@ a {
   overflow: hidden;
   flex-direction: row-reverse;
   background-color: #cc7a00;
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
   color: #181a18;
 }
 
@@ -637,7 +637,7 @@ a {
   overflow: hidden;
   flex-direction: row-reverse;
   background-color: #cc7a00;
-  background-image: url("/imbarbernext/assets/lined-paper-2.png");
+  background-image: url("/assets/lined-paper-2.png");
 }
 
 .idan-container .text {

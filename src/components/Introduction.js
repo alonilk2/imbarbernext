@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
 import ScrollZoomImage from "./ScrollZoomImage";
+import useWindowSize from "@/hooks/useWindowSize";
 
-export default function Introduction() {
+export default function Introduction({contactRef}) {
   const [mounted, setMounted] = useState(false);
+  const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const scrollToComponent = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the component
+    }
+  };
+
   if (!mounted) return <></>;
   return (
     <section className="first-section">
@@ -21,7 +30,7 @@ export default function Introduction() {
             flexDirection: "column",
           }}
         >
-          <h2>העתיד שלך מתחיל כאן</h2>
+          <h2 style={{marginBottom: '5%'}}>העתיד שלך מתחיל כאן!</h2>
           <div className="left-pane">
             <p>
               חולם על קריירה מצליחה שתשנה לך את החיים?
@@ -46,7 +55,7 @@ export default function Introduction() {
                 לקריירה מצליחה!
               </strong>
             </p>
-            <button onClick={() => {}} className="details-btn">
+            <button onClick={scrollToComponent} className="details-btn">
               לקבלת פרטים נוספים
             </button>
           </div>
@@ -61,7 +70,7 @@ export default function Introduction() {
           }}
         >
           <video controls preload="metadata" width="480" height="480">
-            <source src="/imbarbernext/assets/Firstvideo.mp4" type="video/mp4" />
+            <source src="/assets/Firstvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -70,9 +79,10 @@ export default function Introduction() {
       <div className="idan-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/imbarbernext/assets/images/idan.jpg"}
+            imageSrc={"/assets/images/idan.jpg"}
             maxScale={1.5}
             minScale={1}
+            imageAlt="עידן מבלייב"
           />
         </div>
 
@@ -110,9 +120,10 @@ export default function Introduction() {
       <div className="first-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/imbarbernext/assets/images/intro-2.jpeg"}
+            imageSrc={"/assets/images/intro-2.jpeg"}
             maxScale={1.7}
             minScale={1}
+            imageAlt="תמונת רקע"
           />
         </div>
 
@@ -137,7 +148,7 @@ export default function Introduction() {
               בדרך.
             </p>
           </div>
-          <button onClick={() => {}} className="details-btn">
+          <button onClick={scrollToComponent} className="details-btn">
             לקבלת פרטים נוספים
           </button>
         </div>
@@ -146,9 +157,10 @@ export default function Introduction() {
       <div className="second-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/imbarbernext/assets/images/intro-1.jpeg"}
+            imageSrc={"/assets/images/intro-1.jpeg"}
             maxScale={1.7}
             minScale={1}
+            imageAlt="הצצה לקורס"
           />
         </div>
 
@@ -175,7 +187,7 @@ export default function Introduction() {
               <br />
             </p>
           </div>
-          <button onClick={() => {}} className="details-btn-dark">
+          <button onClick={scrollToComponent} className="details-btn-dark">
             לקבלת פרטים נוספים
           </button>
         </div>
@@ -192,23 +204,23 @@ export default function Introduction() {
             }}
           >
             <video controls preload="metadata" width="480" height="480">
-              <source src="/imbarbernext/assets/early.mp4" type="video/mp4" />
+              <source src="/assets/early.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
 
-        <div className="text">
+        <div className="text" style={isMobile ? {padding: "10% 5% 10% 5%"} : {}}>
           <div className="title-first green">
-            חושבים שמאוחר מדי?
+            לא משנה מתי מתחילים
             <br />
-            <span className="title-second">או בכלל מוקדם מדי?</span>
+            <span className="title-second">תמיד אפשר לעשות את זה נכון</span>
           </div>
 
           <div className="second-p">
             <p>תצפו בקטע קצר מאחד השיעורים אצלנו באקדמיה, ותבינו שהכל אפשרי.</p>
           </div>
-          <button onClick={() => {}} className="details-btn">
+          <button onClick={scrollToComponent} className="details-btn">
             לקבלת פרטים נוספים
           </button>
         </div>
@@ -226,7 +238,7 @@ export default function Introduction() {
             }}
           >
             <video controls preload="metadata" width="480" height="480" >
-              <source src="/imbarbernext/assets/baha.mp4" type="video/mp4" />
+              <source src="/assets/baha.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -243,7 +255,7 @@ export default function Introduction() {
             <p>בוא ותראה מה יש לבהא בוגר האקדמייה שלנו לומר!
             </p>
           </div>
-          <button onClick={() => {}} className="details-btn-dark">
+          <button onClick={scrollToComponent} className="details-btn-dark">
             לקבלת פרטים נוספים
           </button>
         </div>

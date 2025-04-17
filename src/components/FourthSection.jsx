@@ -6,152 +6,152 @@ import "react-photo-album/rows.css";
 
 const photos = [
   {
-    src: "/imbarbernext/assets/images/IMG_2693.jpg",
+    src: "/assets/images/IMG_2693.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_5753.jpg",
+    src: "/assets/images/IMG_5753.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_6657.jpg",
+    src: "/assets/images/IMG_6657.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_7135.jpg",
+    src: "/assets/images/IMG_7135.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_7152.jpg",
+    src: "/assets/images/IMG_7152.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_6661.jpg",
+    src: "/assets/images/IMG_6661.jpg",
     width: 4,
     height: 6,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_6663.jpg",
+    src: "/assets/images/IMG_6663.jpg",
     width: 4,
     height: 6,
   },
   {
-    src: "/imbarbernext/assets/images/366422800_1577079526152606_7295038832287343510_n.jpg",
+    src: "/assets/images/366422800_1577079526152606_7295038832287343510_n.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/367363791_6396963823686581_6020232073178473218_n.jpg",
+    src: "/assets/images/367363791_6396963823686581_6020232073178473218_n.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/365973163_3611257245820627_9153701522228245834_n.jpg",
+    src: "/assets/images/365973163_3611257245820627_9153701522228245834_n.jpg",
     width: 300,
     height: 400,
   },
   {
-    src: "/imbarbernext/assets/images/366123880_957821968765001_4965962855025676254_n.jpg",
+    src: "/assets/images/366123880_957821968765001_4965962855025676254_n.jpg",
     width: 300,
     height: 400,
   },
 
   {
-    src: "/imbarbernext/assets/images/IMG_1866-min.JPG",
+    src: "/assets/images/IMG_1866-min.JPG",
     width: 400,
     height: 600,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_1881-min.jpg",
+    src: "/assets/images/IMG_1881-min.jpg",
     width: 400,
     height: 600,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_1893-min.jpg",
+    src: "/assets/images/IMG_1893-min.jpg",
     width: 400,
     height: 600,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_5107-min.jpg",
+    src: "/assets/images/IMG_5107-min.jpg",
     width: 400,
     height: 600,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_5115-min.jpg",
+    src: "/assets/images/IMG_5115-min.jpg",
     width: 400,
     height: 700,
   },
 
   {
-    src: "/imbarbernext/assets/images/IMG_5116-min.jpg",
+    src: "/assets/images/IMG_5116-min.jpg",
     width: 400,
     height: 700,
   },  {
-    src: "/imbarbernext/assets/images/IMG_5126-min.jpg",
+    src: "/assets/images/IMG_5126-min.jpg",
     width: 400,
     height: 700,
     },  {
-    src: "/imbarbernext/assets/images/IMG_5127-min.jpg",
+    src: "/assets/images/IMG_5127-min.jpg",
     width: 400,
     height: 700,
     },  {
-    src: "/imbarbernext/assets/images/IMG_5128-min.jpg",
+    src: "/assets/images/IMG_5128-min.jpg",
     width: 400,
     height: 700,
   },  {
-    src: "/imbarbernext/assets/images/IMG_5129-min.jpg",
+    src: "/assets/images/IMG_5129-min.jpg",
     width: 400,
     height: 700,
   },
 
 
   {
-    src: "/imbarbernext/assets/images/IMG_2076-min.jpg",
+    src: "/assets/images/IMG_2076-min.jpg",
     width: 400,
     height: 600,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_2080-min.jpg",
+    src: "/assets/images/IMG_2080-min.jpg",
     width: 400,
     height: 600,
   },
   {
-    src: "/imbarbernext/assets/images/IMG_2083-min.jpg",
+    src: "/assets/images/IMG_2083-min.jpg",
     width: 400,
     height: 600,
   },
 
   {
-    src: "/imbarbernext/assets/images/IMG_2092-min.jpg",
+    src: "/assets/images/IMG_2092-min.jpg",
     width: 400,
     height: 600,
   },  {
-    src: "/imbarbernext/assets/images/IMG_2101-min.jpg",
+    src: "/assets/images/IMG_2101-min.jpg",
     width: 400,
     height: 600,
     },  {
-    src: "/imbarbernext/assets/images/IMG_2132-min.jpg",
+    src: "/assets/images/IMG_2132-min.jpg",
     width: 400,
     height: 600,
     },  {
-    src: "/imbarbernext/assets/images/IMG_2136-min.jpg",
+    src: "/assets/images/IMG_2136-min.jpg",
     width: 400,
     height: 600,
   },  {
-    src: "/imbarbernext/assets/images/IMG_2161-min.jpg",
+    src: "/assets/images/IMG_2161-min.jpg",
     width: 400,
     height: 600,
   },  {
-    src: "/imbarbernext/assets/images/IMG_2174-min.jpg",
+    src: "/assets/images/IMG_2174-min.jpg",
     width: 400,
     height: 600,
   },  {
-    src: "/imbarbernext/assets/images/IMG_2182-min.jpg",
+    src: "/assets/images/IMG_2182-min.jpg",
     width: 400,
     height: 600,
   },
@@ -189,10 +189,7 @@ const reviews = [
     author_name: "Rial Howari",
     text: "מספרה מס' 1 בצפון!! נוחות, יחס אדיב, מקצועיות וכל מה שאתם צריכים במקום אחד מקצועי. מבטיח תגיעו פעם אחת אתם תתאהבו במקום! חוזר ואומר מקצועיות ואמינות 100% ממליץ בחום!",
   },
-  {
-    author_name: "Tal Knyazev",
-    text: "מקום נקי עם אווירה טובה, ספרים ואנשים מאוד חברותיים, שירות של בית מלון 5 כוכבים והכי חשוב ספרים הכי מקצועים שיש עם הרמה הכי גבוהה שיש אין מצב שלא תצאו עם חיוך על הפנים ועם התספורת הכי טובה שיש ממליץ בחום",
-  },
+
 ];
 
 export default function FourthSection() {

@@ -14,7 +14,7 @@ export default function Socials({
   const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
   const defaultContainerStyle = {
     display: "flex",
-    gap: "20px",
+    gap: "8px",
     ...containerStyle,
   };
 

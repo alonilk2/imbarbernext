@@ -76,7 +76,7 @@ const Navbar = () => {
     <nav style={navStyles}>
 
       <div style={logoContainerStyles}>
-        <img style={logoStyles} src={"/imbarbernext/assets/logo.svg"} alt="logo" />
+        <img style={logoStyles} src={"/assets/logo.svg"} alt="logo" />
       </div>
 
       <Socials iconSize={32} />

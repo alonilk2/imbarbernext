@@ -31,7 +31,7 @@ export default function Home() {
         <meta property="og:url" content="https://www.imbarber.com" />
         <link rel="icon" href="favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="stylesheet" href="output.css" />
+        {/* <link rel="stylesheet" href="output.css" /> */}
 
         <link
           href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
@@ -41,7 +41,7 @@ export default function Home() {
       </Head>
       <div className="App">
         <Header contactRef={contactRef} />
-        <Introduction />
+        <Introduction contactRef={contactRef} />
         <Lessons />
         <Contact ref={contactRef} />
         <FourthSection />
