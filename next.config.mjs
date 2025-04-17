@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/imbarbernext',
-  assetPrefix: process.env.NODE_ENV === "production" ? "/imbarbernext/" : undefined,
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/imbarbernext' : '',
+  trailingSlash: true,
+  assetPrefix: '/imbarbernext/',
 };
 
 export default nextConfig;

@@ -11,13 +11,13 @@ export default function Header({ contactRef }) {
   return (
     <header className="App-header">
       <video className="video" loop autoPlay playsInline muted loading="lazy">
-        <source src={"/assets/1.webm"} type="video/webm" />
-        <source src={"/assets/1.mp4"} type="video/mp4" />
+        <source src={"/imbarbernext/assets/1.webm"} type="video/webm" />
+        <source src={"/imbarbernext/assets/1.mp4"} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <Navbar />
       <div className="content App-logo-bg">
-        {/* <img src={"/assets/logo.svg"} className="App-logo" alt="logo" /> */}
+        {/* <img src={"/imbarbernext/assets/logo.svg"} className="App-logo" alt="logo" /> */}
 
         <div className="titles">
           <div className="row line-container">

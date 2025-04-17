@@ -8,7 +8,7 @@ export default function Footer() {
       </div>
       <p>כל הזכויות שמורות © Idan Mavlayev 2025</p>
       <a className="abdev" href="https://alondev.com/">
-        <img src={"/assets/abdev.webp"} alt="ABdev" className="abdev-img" />
+        <img src={"/imbarbernext/assets/abdev.webp"} alt="ABdev" className="abdev-img" />
         <span
           style={{
             color: "white",

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { SiFacebook, SiTiktok, SiInstagram } from "react-icons/si";
 import Socials from "./Socials";
 import useWindowSize from "@/hooks/useWindowSize";
+
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const {width} = useWindowSize();
@@ -75,7 +76,7 @@ const Navbar = () => {
     <nav style={navStyles}>
 
       <div style={logoContainerStyles}>
-        <img style={logoStyles} src={"/assets/logo.svg"} alt="logo" />
+        <img style={logoStyles} src={"/imbarbernext/assets/logo.svg"} alt="logo" />
       </div>
 
       <Socials iconSize={32} />

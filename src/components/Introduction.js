@@ -61,7 +61,7 @@ export default function Introduction() {
           }}
         >
           <video controls preload="metadata" width="480" height="480">
-            <source src="/assets/Firstvideo.mp4" type="video/mp4" />
+            <source src="/imbarbernext/assets/Firstvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -70,7 +70,7 @@ export default function Introduction() {
       <div className="idan-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/idan.jpg"}
+            imageSrc={"/imbarbernext/assets/images/idan.jpg"}
             maxScale={1.5}
             minScale={1}
           />
@@ -110,7 +110,7 @@ export default function Introduction() {
       <div className="first-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/intro-2.jpeg"}
+            imageSrc={"/imbarbernext/assets/images/intro-2.jpeg"}
             maxScale={1.7}
             minScale={1}
           />
@@ -146,7 +146,7 @@ export default function Introduction() {
       <div className="second-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/intro-1.jpeg"}
+            imageSrc={"/imbarbernext/assets/images/intro-1.jpeg"}
             maxScale={1.7}
             minScale={1}
           />
@@ -192,7 +192,7 @@ export default function Introduction() {
             }}
           >
             <video controls preload="metadata" width="480" height="480">
-              <source src="/assets/early.mp4" type="video/mp4" />
+              <source src="/imbarbernext/assets/early.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -226,7 +226,7 @@ export default function Introduction() {
             }}
           >
             <video controls preload="metadata" width="480" height="480" >
-              <source src="/assets/baha.mp4" type="video/mp4" />
+              <source src="/imbarbernext/assets/baha.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

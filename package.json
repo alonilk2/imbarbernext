@@ -2,13 +2,14 @@
   "name": "imbarbernext",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yourusername.github.io/imbarbernext",
+  "homepage": "https://alonilk2.github.io/imbarbernext/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "build": "next build",
+    "deploy": "next build && gh-pages -d out"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

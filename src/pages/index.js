@@ -29,8 +29,10 @@ export default function Home() {
           content="ברוכים הבאים לIM.Barber - Academy & Barbershop, חנות המוצרים והאקדמיה לספרות של IM.Barber, מוצרים למספרות, שיער, מכונות תספורת"
         />
         <meta property="og:url" content="https://www.imbarber.com" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="stylesheet" href="output.css" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
           rel="stylesheet"
