@@ -108,6 +108,53 @@ const photos = [
     width: 400,
     height: 700,
   },
+
+
+  {
+    src: "/assets/images/IMG_2076-min.jpg",
+    width: 400,
+    height: 600,
+  },
+  {
+    src: "/assets/images/IMG_2080-min.jpg",
+    width: 400,
+    height: 600,
+  },
+  {
+    src: "/assets/images/IMG_2083-min.jpg",
+    width: 400,
+    height: 600,
+  },
+
+  {
+    src: "/assets/images/IMG_2092-min.jpg",
+    width: 400,
+    height: 600,
+  },  {
+    src: "/assets/images/IMG_2101-min.jpg",
+    width: 400,
+    height: 600,
+    },  {
+    src: "/assets/images/IMG_2132-min.jpg",
+    width: 400,
+    height: 600,
+    },  {
+    src: "/assets/images/IMG_2136-min.jpg",
+    width: 400,
+    height: 600,
+  },  {
+    src: "/assets/images/IMG_2161-min.jpg",
+    width: 400,
+    height: 600,
+  },  {
+    src: "/assets/images/IMG_2174-min.jpg",
+    width: 400,
+    height: 600,
+  },  {
+    src: "/assets/images/IMG_2182-min.jpg",
+    width: 400,
+    height: 600,
+  },
 ];
 
 const reviews = [

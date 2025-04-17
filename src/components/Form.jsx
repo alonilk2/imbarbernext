@@ -1,34 +1,13 @@
 import useWindowSize from "@/hooks/useWindowSize";
 import { colors } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Alert, Button, Snackbar, TextField } from "@mui/material";
 
+import { publickey } from "../constants";
 export default function ApplicationForm() {
   const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
-  const [formData, setFormData] = useState({
-    satisfied: "",
-    changeWhat: "",
-    whyLiterature: "",
-    whyImAcademy: "",
-    futureVision: "",
-    investmentUnderstanding: "",
-    readyToCommit: "",
-    startDate: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("טופס נשלח:", formData);
-    alert("הטופס נשלח בהצלחה!");
-  };
-
+  
   // סגנונות CSS מוגדרים בתוך הקומפוננטה
   const styles = {
     container: {
@@ -105,21 +84,50 @@ export default function ApplicationForm() {
       backgroundColor: "#181a18",
     },
   };
+  const formRef = useRef({
+    name: "",
+    phone: "",
+    email: "",
+    satisfied: "",
+    changeWhat: "",
+    whyLiterature: "",
+    whyImAcademy: "",
+    futureVision: "",
+    investmentUnderstanding: "",
+    readyToCommit: "",
+    startDate: "",
+  });
+  const [success, setSuccess] = useState();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      console.log("ABC")
+      await emailjs.sendForm(
+        "service_c0mdbl5",
+        "template_w3ffrb8",
+        formRef.current,
+        publickey
+      );
+      setSuccess(true);
+    } catch (error) {
+      setSuccess(false);
+    }
+  }
+
 
   return (
     <div style={styles.container}>
       <div style={styles.paper}>
         <h1 style={styles.header}>טופס הרשמה - IM Academy</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} ref={formRef}>
           <div style={styles.formControl}>
             <label style={styles.label}>שם מלא<span color="red">*</span>: </label>
             <input
             required
               type="text"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
               style={styles.textField}
             />
           </div>
@@ -129,8 +137,6 @@ export default function ApplicationForm() {
             required
               type="text"
               name="phone"
-              value={formData.phone}
-              onChange={handleChange}
               style={styles.textField}
             />
           </div>
@@ -140,8 +146,6 @@ export default function ApplicationForm() {
             required
               type="text"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
               style={styles.textField}
             />
           </div>
@@ -155,8 +159,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="satisfied"
                   value="כן"
-                  checked={formData.satisfied === "כן"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 כן
@@ -166,8 +168,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="satisfied"
                   value="לא"
-                  checked={formData.satisfied === "לא"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 לא
@@ -176,14 +176,12 @@ export default function ApplicationForm() {
           </div>
 
           {/* שאלה 2 - מופיעה רק אם התשובה לשאלה 1 היא "לא" */}
-          {formData.satisfied === "לא" && (
+          {formRef.current.satisfied === "לא" && (
             <div style={styles.formControl}>
               <label style={styles.label}>מה היית רוצה לשנות?</label>
               <textarea
                 name="changeWhat"
-                value={formData.changeWhat}
-                onChange={handleChange}
-                style={styles.textField}
+                  style={styles.textField}
                 rows="3"
               />
             </div>
@@ -197,8 +195,6 @@ export default function ApplicationForm() {
             </label>
             <textarea
               name="whyLiterature"
-              value={formData.whyLiterature}
-              onChange={handleChange}
               style={styles.textField}
               rows="3"
             />
@@ -209,8 +205,6 @@ export default function ApplicationForm() {
             <label style={styles.label}>מה משך אותך ב-IM Academy?</label>
             <textarea
               name="whyImAcademy"
-              value={formData.whyImAcademy}
-              onChange={handleChange}
               style={styles.textField}
               rows="3"
             />
@@ -223,8 +217,6 @@ export default function ApplicationForm() {
             </label>
             <textarea
               name="futureVision"
-              value={formData.futureVision}
-              onChange={handleChange}
               style={styles.textField}
               rows="3"
             />
@@ -241,8 +233,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="investmentUnderstanding"
                   value="כן"
-                  checked={formData.investmentUnderstanding === "כן"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 כן
@@ -252,8 +242,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="investmentUnderstanding"
                   value="לא"
-                  checked={formData.investmentUnderstanding === "לא"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 לא
@@ -272,8 +260,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="readyToCommit"
                   value="כן"
-                  checked={formData.readyToCommit === "כן"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 כן
@@ -283,8 +269,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="readyToCommit"
                   value="לא"
-                  checked={formData.readyToCommit === "לא"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 לא
@@ -303,8 +287,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="startDate"
                   value="מיידי"
-                  checked={formData.startDate === "מיידי"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 מיידי
@@ -314,8 +296,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="startDate"
                   value="תוך שבוע"
-                  checked={formData.startDate === "תוך שבוע"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 תוך שבוע
@@ -325,8 +305,6 @@ export default function ApplicationForm() {
                   type="radio"
                   name="startDate"
                   value="תוך חודש"
-                  checked={formData.startDate === "תוך חודש"}
-                  onChange={handleChange}
                   style={styles.radio}
                 />
                 תוך חודש
@@ -348,7 +326,23 @@ export default function ApplicationForm() {
             שלח טופס
           </button>
         </form>
+        {success === true && (
+        <Snackbar
+          open={success === true}
+          autoHideDuration={6000}
+          onClose={() => setSuccess()}
+        >
+          <Alert
+            onClose={() => setSuccess()}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            האימייל נשלח בהצלחה!
+          </Alert>
+        </Snackbar>
+      )}
       </div>
     </div>
   );
+  
 }

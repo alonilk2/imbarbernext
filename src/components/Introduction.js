@@ -60,7 +60,7 @@ export default function Introduction() {
             alignItems: "center",
           }}
         >
-          <video controls preload="metadata" width="720" height="480">
+          <video controls preload="metadata" width="480" height="480">
             <source src="/assets/Firstvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -191,7 +191,7 @@ export default function Introduction() {
               alignItems: "center",
             }}
           >
-            <video controls preload="metadata" width="720" height="480">
+            <video controls preload="metadata" width="480" height="480">
               <source src="/assets/early.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -225,7 +225,7 @@ export default function Introduction() {
               alignItems: "center",
             }}
           >
-            <video controls preload="metadata" width="720" height="480" >
+            <video controls preload="metadata" width="480" height="480" >
               <source src="/assets/baha.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>

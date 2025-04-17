@@ -837,18 +837,42 @@ text-align: center;
   border: unset;
 }
 @media only screen and (max-width: 1024px) {
+  .App-header .titles {
+    width: 90%;
+
+  }
+  .review-container .name {
+    font-size: 1rem;
+  }
+  .rectangle-yellow {
+    position: absolute;
+    width: 380px;
+    height: 130px;
+    top: 62% !important;
+  }
+  .contact-section .right-pane {
+    padding: 5%;
+  }
+  .rectangle-white {
+    width: 380px;
+    height: 130px;
+
+  }
+  .title-second {
+    font-size: 3.5rem;
+  }
   .followus .back {
-    top: 40%;          /* Vertically center */
+    top: 45%;          /* Vertically center */
     transform: translate(-50.5%, -50.5%);
   
   }
   .followus .back-1 {
-    top: 40%;          /* Vertically center */
+    top: 45%;          /* Vertically center */
     color: gray !important;
     transform: translate(-50%, -46.5%);
   }
   .followus p {
-    top: 40%;          /* Vertically center */
+    top: 45%;          /* Vertically center */
     font-size: 1.8rem !important;
   }
   .first-section {
@@ -888,12 +912,16 @@ text-align: center;
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 768px) {
   .title-first {
     margin-bottom: 5%;
   }
   .recommendation h2 {
     text-align: center;
+  }
+  .rectangle-yellow {
+
+    top: 70% !important;
   }
   .image-intro {
   height: 500px;
@@ -918,20 +946,6 @@ text-align: center;
     margin: 16px 0;
   }
   .followus p {
-  }
-  .rectangle-yellow {
-    position: absolute;
-    width: 350px;
-    height: 100px;
-    top: 75% !important;
-  }
-  .contact-section .right-pane {
-    padding: 5%;
-  }
-  .rectangle-white {
-    width: 350px;
-    height: 100px;
-
   }
   .idan-container {
     flex-direction: column;

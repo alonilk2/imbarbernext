@@ -1,10 +1,8 @@
-import { Alert, Button, Snackbar, TextField } from "@mui/material";
 import { useRef } from "react";
 import { forwardRef } from "react";
 import { useState } from "react";
 import useWindowSize from "../hooks/useWindowSize";
-import emailjs from "@emailjs/browser";
-import { publickey } from "../constants";
+
 import Form from "./Form";
 
 const Contact = forwardRef(function Contact(props, ref) {
@@ -12,23 +10,10 @@ const Contact = forwardRef(function Contact(props, ref) {
     "היי! אשמח לקבוע פגישה טלפונית כדי לקבל פרטים על האקדמיה"
   );
   const formRef = useRef();
-  const [success, setSuccess] = useState();
+
   const { width } = useWindowSize();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    try {
-      await emailjs.sendForm(
-        "service_ddgz0eh",
-        "template_w3ffrb8",
-        formRef.current,
-        publickey
-      );
-      setSuccess(true);
-    } catch (error) {
-      setSuccess(false);
-    }
-  }
+
 
   return (
     <section className="contact-section" ref={ref}>
@@ -64,21 +49,7 @@ const Contact = forwardRef(function Contact(props, ref) {
         )}
       </div>
 
-      {success === true && (
-        <Snackbar
-          open={success === true}
-          autoHideDuration={6000}
-          onClose={() => setSuccess()}
-        >
-          <Alert
-            onClose={() => setSuccess()}
-            severity="success"
-            sx={{ width: "100%" }}
-          >
-            האימייל נשלח בהצלחה!
-          </Alert>
-        </Snackbar>
-      )}
+
     </section>
   );
 });
