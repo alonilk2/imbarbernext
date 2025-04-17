@@ -17,8 +17,6 @@ export default function Header({ contactRef }) {
       </video>
       <Navbar />
       <div className="content App-logo-bg">
-        {/* <img src={"/assets/logo.svg"} className="App-logo" alt="logo" /> */}
-
         <div className="titles">
           <div className="row line-container">
             <div class="circle"></div>

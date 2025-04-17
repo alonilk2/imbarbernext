@@ -5,10 +5,33 @@ import Header from "@/components/Header";
 import Introduction from "@/components/Introduction";
 import Lessons from "@/components/Lessons";
 import Head from "next/head";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const contactRef = useRef(null);
+  const [isFourthSectionVisible, setFourthSectionVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setFourthSectionVisible(true);
+        }
+      },
+      { threshold: 0.1 } // Adjust threshold as needed
+    );
+
+    const target = document.getElementById("fourth-section-placeholder");
+    if (target) {
+      observer.observe(target);
+    }
+
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -31,20 +54,19 @@ export default function Home() {
         <meta property="og:url" content="https://www.imbarber.com" />
         <link rel="icon" href="favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        {/* <link rel="stylesheet" href="output.css" /> */}
-
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap"
           rel="stylesheet"
         />
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"></link>
       </Head>
       <div className="App">
         <Header contactRef={contactRef} />
         <Introduction contactRef={contactRef} />
         <Lessons />
         <Contact ref={contactRef} />
-        <FourthSection />
+        <div id="fourth-section-placeholder" style={{ maxHeight: "0px" }}></div>
+        {isFourthSectionVisible && <FourthSection />}
         <Footer />
       </div>
     </>

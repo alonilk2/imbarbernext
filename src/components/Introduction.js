@@ -69,7 +69,7 @@ export default function Introduction({contactRef}) {
             alignItems: "center",
           }}
         >
-          <video controls preload="metadata" width="480" height="480">
+          <video controls preload="metadata" width="480" height="480" poster="/assets/images/videoframe_0.webp">
             <source src="/assets/Firstvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -120,7 +120,7 @@ export default function Introduction({contactRef}) {
       <div className="first-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/intro-2.jpeg"}
+            imageSrc={"/assets/images/intro-2.webp"}
             maxScale={1.7}
             minScale={1}
             imageAlt="תמונת רקע"
@@ -157,7 +157,7 @@ export default function Introduction({contactRef}) {
       <div className="second-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/intro-1.jpeg"}
+            imageSrc={"/assets/images/intro-1.webp"}
             maxScale={1.7}
             minScale={1}
             imageAlt="הצצה לקורס"
@@ -203,7 +203,7 @@ export default function Introduction({contactRef}) {
               alignItems: "center",
             }}
           >
-            <video controls preload="metadata" width="480" height="480">
+            <video controls preload="metadata" width="480" height="480" poster="/assets/images/videoframe_3.webp">
               <source src="/assets/early.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -237,7 +237,7 @@ export default function Introduction({contactRef}) {
               alignItems: "center",
             }}
           >
-            <video controls preload="metadata" width="480" height="480" >
+            <video controls preload="metadata" width="480" height="480" poster="/assets/images/videoframe_2.webp">
               <source src="/assets/baha.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>

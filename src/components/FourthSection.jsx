@@ -51,28 +51,28 @@ const photos = [
     height: 400,
   },
   {
-    src: "/assets/images/365973163_3611257245820627_9153701522228245834_n.jpg",
+    src: "/assets/images/365973163_3611257245820627_9153701522228245834_n.webp",
     width: 300,
     height: 400,
   },
   {
-    src: "/assets/images/366123880_957821968765001_4965962855025676254_n.jpg",
+    src: "/assets/images/366123880_957821968765001_4965962855025676254_n.webp",
     width: 300,
     height: 400,
   },
 
   {
-    src: "/assets/images/IMG_1866-min.JPG",
+    src: "/assets/images/IMG_1866-min.webp",
     width: 400,
     height: 600,
   },
   {
-    src: "/assets/images/IMG_1881-min.jpg",
+    src: "/assets/images/IMG_1881-min.webp",
     width: 400,
     height: 600,
   },
   {
-    src: "/assets/images/IMG_1893-min.jpg",
+    src: "/assets/images/IMG_1893-min.webp",
     width: 400,
     height: 600,
   },
