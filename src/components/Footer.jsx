@@ -1,12 +1,8 @@
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="socials">
-        {/* <SocialIcon url="https://www.tiktok.com/@idan_mavlayev?lang=he-IL" />
-        <SocialIcon url="https://www.instagram.com/_im.barber_/" /> */}
-        {/* <siFacebook url="https://www.facebook.com/idanbarber" /> */}
-      </div>
       <p>כל הזכויות שמורות © Idan Mavlayev 2025</p>
+      <p>Contact us at <a href="mailto:imbarberil2@gmail.com">imbarberil2@gmail.com</a></p>
       <a className="abdev" href="https://alondev.com/">
         <img src={"/assets/abdev.webp"} alt="ABdev Logo" className="abdev-img" />
         <span
@@ -20,7 +16,7 @@ export default function Footer() {
             whiteSpace: "nowrap",
           }}
         >
-          Built by
+          Website built by
         </span>
       </a>
     </footer>

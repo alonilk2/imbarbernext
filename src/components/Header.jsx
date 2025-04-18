@@ -18,6 +18,7 @@ export default function Header({ contactRef }) {
       <Navbar />
       <div className="content App-logo-bg">
         <div className="titles">
+          <h1 className="visually-hidden">IM.Barber - האקדמיה לספרות</h1>
           <div className="row line-container">
             <div class="circle"></div>
             <div class="line"></div>

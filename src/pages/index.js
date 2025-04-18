@@ -42,7 +42,7 @@ export default function Home() {
           content="ברוכים הבאים לIM.Barber - Academy & Barbershop, חנות המוצרים והאקדמיה לספרות של IM.Barber, מוצרים למספרות, שיער, מכונות תספורת'"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="IM.Barber - Academy & Barbershop" />
+        <meta property="og:title" content="IM.Barber - אקדמיה לספרות, מספרה, מוצרי שיער וטיפוח" />
         <meta
           property="og:image"
           content="https://alonilk2.github.io/map1/logo-barber.png"
@@ -52,6 +52,8 @@ export default function Home() {
           content="ברוכים הבאים לIM.Barber - Academy & Barbershop, חנות המוצרים והאקדמיה לספרות של IM.Barber, מוצרים למספרות, שיער, מכונות תספורת"
         />
         <meta property="og:url" content="https://www.imbarber.com" />
+        <meta name="keywords" content="IM.Barber, Academy, Barbershop, ספרות, תספורת, אקדמיה, מספרה, מוצרים למספרות, שיער, מכונות תספורת" />
+        <meta name="author" content="Idan Mavlayev" />
         <link rel="icon" href="favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

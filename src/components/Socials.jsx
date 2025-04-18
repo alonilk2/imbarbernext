@@ -1,4 +1,3 @@
-import useWindowSize from "@/hooks/useWindowSize";
 import { SiFacebook, SiInstagram, SiTiktok } from "react-icons/si";
 
 export default function Socials({
@@ -11,7 +10,6 @@ export default function Socials({
   containerStyle = {},
   linkStyle = {},
 }) {
-  const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
   const defaultContainerStyle = {
     display: "flex",
     gap: "8px",
@@ -33,6 +31,7 @@ export default function Socials({
         target="_blank"
         rel="noopener noreferrer"
         style={defaultLinkStyle}
+        aria-label="Facebook"
       >
         <SiFacebook viewBox="-5 -5 32 32" size={iconSize} stroke="black" strokeWidth={1} />
       </a>
@@ -41,6 +40,7 @@ export default function Socials({
         target="_blank"
         rel="noopener noreferrer"
         style={defaultLinkStyle}
+        aria-label="Instagram"
       >
         <SiInstagram viewBox="-5 -5 32 32" size={iconSize} stroke="black" strokeWidth={1} />
       </a>
@@ -49,6 +49,7 @@ export default function Socials({
         target="_blank"
         rel="noopener noreferrer"
         style={defaultLinkStyle}
+        aria-label="TikTok"
       >
         <SiTiktok viewBox="-5 -5 32 32" size={iconSize} stroke="black" strokeWidth={1} />
       </a>

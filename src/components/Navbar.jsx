@@ -1,6 +1,4 @@
-import { Icon } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { SiFacebook, SiTiktok, SiInstagram } from "react-icons/si";
 import Socials from "./Socials";
 import useWindowSize from "@/hooks/useWindowSize";
 
@@ -67,18 +65,11 @@ const Navbar = () => {
     width: `${logoSize}px`,
   };
 
-  // Empty div to balance the layout (matches width of social links)
-  const spacerStyles = {
-    width: "108px", // Matches width of the social links section
-  };
-
   return (
     <nav style={navStyles}>
-
       <div style={logoContainerStyles}>
         <img style={logoStyles} src={"/assets/logo.svg"} alt="logo" />
       </div>
-
       <Socials iconSize={32} />
     </nav>
   );

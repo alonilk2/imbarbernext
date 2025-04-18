@@ -7,7 +7,7 @@ import { Alert, Button, Snackbar, TextField } from "@mui/material";
 import { publickey } from "../constants";
 export default function ApplicationForm() {
   const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
-  
+
   // סגנונות CSS מוגדרים בתוך הקומפוננטה
   const styles = {
     container: {
@@ -49,7 +49,7 @@ export default function ApplicationForm() {
       resize: "vertical",
       boxSizing: "border-box",
       backgroundColor: "white",
-      color: "black"
+      color: "black",
     },
     radioGroup: {
       display: "flex",
@@ -102,7 +102,7 @@ export default function ApplicationForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      console.log("ABC")
+      console.log("ABC");
       await emailjs.sendForm(
         "service_c0mdbl5",
         "template_w3ffrb8",
@@ -115,7 +115,6 @@ export default function ApplicationForm() {
     }
   }
 
-
   return (
     <div style={styles.container}>
       <div style={styles.paper}>
@@ -123,30 +122,39 @@ export default function ApplicationForm() {
 
         <form onSubmit={handleSubmit} ref={formRef}>
           <div style={styles.formControl}>
-            <label style={styles.label}>שם מלא<span color="red">*</span>: </label>
+            <label style={styles.label}>
+              שם מלא<span color="red">*</span>:
+            </label>
             <input
-            required
+              required
               type="text"
               name="name"
               style={styles.textField}
+              aria-label="שם מלא"
             />
           </div>
           <div style={styles.formControl}>
-            <label style={styles.label}>פלאפון<span color="red">*</span>: </label>
+            <label style={styles.label}>
+              פלאפון<span color="red">*</span>:
+            </label>
             <input
-            required
+              required
               type="text"
               name="phone"
               style={styles.textField}
+              aria-label="פלאפון"
             />
           </div>
           <div style={styles.formControl}>
-            <label style={styles.label}>אימייל<span color="red">*</span>: </label>
+            <label style={styles.label}>
+              אימייל<span color="red">*</span>:
+            </label>
             <input
-            required
+              required
               type="text"
               name="email"
               style={styles.textField}
+              aria-label="אימייל"
             />
           </div>
           <div style={styles.formControl}>
@@ -160,6 +168,7 @@ export default function ApplicationForm() {
                   name="satisfied"
                   value="כן"
                   style={styles.radio}
+                  aria-label="מרוצה - כן"
                 />
                 כן
               </label>
@@ -169,25 +178,23 @@ export default function ApplicationForm() {
                   name="satisfied"
                   value="לא"
                   style={styles.radio}
+                  aria-label="מרוצה - לא"
                 />
                 לא
               </label>
             </div>
           </div>
-
-          {/* שאלה 2 - מופיעה רק אם התשובה לשאלה 1 היא "לא" */}
           {formRef.current.satisfied === "לא" && (
             <div style={styles.formControl}>
               <label style={styles.label}>מה היית רוצה לשנות?</label>
               <textarea
                 name="changeWhat"
-                  style={styles.textField}
+                style={styles.textField}
                 rows="3"
+                aria-label="מה היית רוצה לשנות"
               />
             </div>
           )}
-
-          {/* שאלה 3 */}
           <div style={styles.formControl}>
             <label style={styles.label}>
               למה דווקא מקצוע הספרות מושך אותך? (מה גורם לך לחשוב שזה התחום
@@ -197,20 +204,18 @@ export default function ApplicationForm() {
               name="whyLiterature"
               style={styles.textField}
               rows="3"
+              aria-label="למה דווקא מקצוע הספרות מושך אותך"
             />
           </div>
-
-          {/* שאלה 4 */}
           <div style={styles.formControl}>
             <label style={styles.label}>מה משך אותך ב-IM Academy?</label>
             <textarea
               name="whyImAcademy"
               style={styles.textField}
               rows="3"
+              aria-label="מה משך אותך ב-IM Academy"
             />
           </div>
-
-          {/* שאלה 5 */}
           <div style={styles.formControl}>
             <label style={styles.label}>
               איפה אתה רואה את עצמך בעוד שנה מהיום אם תתחיל איתנו עכשיו?
@@ -219,10 +224,9 @@ export default function ApplicationForm() {
               name="futureVision"
               style={styles.textField}
               rows="3"
+              aria-label="איפה אתה רואה את עצמך בעוד שנה מהיום"
             />
           </div>
-
-          {/* שאלה 6 */}
           <div style={styles.formControl}>
             <label style={styles.label}>
               האם אתה מבין שזה תהליך השקעה בעצמך ולא "הוצאה"?
@@ -234,6 +238,7 @@ export default function ApplicationForm() {
                   name="investmentUnderstanding"
                   value="כן"
                   style={styles.radio}
+                  aria-label="מבין שזה תהליך השקעה - כן"
                 />
                 כן
               </label>
@@ -243,13 +248,12 @@ export default function ApplicationForm() {
                   name="investmentUnderstanding"
                   value="לא"
                   style={styles.radio}
+                  aria-label="מבין שזה תהליך השקעה - לא"
                 />
                 לא
               </label>
             </div>
           </div>
-
-          {/* שאלה 7 */}
           <div style={styles.formControl}>
             <label style={styles.label}>
               האם אתה מוכן להתחייב לתהליך ולהשקיע בעצמך כדי להצליח?
@@ -261,6 +265,7 @@ export default function ApplicationForm() {
                   name="readyToCommit"
                   value="כן"
                   style={styles.radio}
+                  aria-label="מוכן להתחייב - כן"
                 />
                 כן
               </label>
@@ -270,13 +275,12 @@ export default function ApplicationForm() {
                   name="readyToCommit"
                   value="לא"
                   style={styles.radio}
+                  aria-label="מוכן להתחייב - לא"
                 />
                 לא
               </label>
             </div>
           </div>
-
-          {/* שאלה 8 */}
           <div style={styles.formControl}>
             <label style={styles.label}>
               במידה ונראה שאתה מתאים - מתי תהיה זמין להתחלת התהליך?
@@ -288,6 +292,7 @@ export default function ApplicationForm() {
                   name="startDate"
                   value="מיידי"
                   style={styles.radio}
+                  aria-label="זמין להתחלה - מיידי"
                 />
                 מיידי
               </label>
@@ -297,6 +302,7 @@ export default function ApplicationForm() {
                   name="startDate"
                   value="תוך שבוע"
                   style={styles.radio}
+                  aria-label="זמין להתחלה - תוך שבוע"
                 />
                 תוך שבוע
               </label>
@@ -306,12 +312,12 @@ export default function ApplicationForm() {
                   name="startDate"
                   value="תוך חודש"
                   style={styles.radio}
+                  aria-label="זמין להתחלה - תוך חודש"
                 />
                 תוך חודש
               </label>
             </div>
           </div>
-
           <button
             type="submit"
             style={styles.button}
@@ -327,22 +333,21 @@ export default function ApplicationForm() {
           </button>
         </form>
         {success === true && (
-        <Snackbar
-          open={success === true}
-          autoHideDuration={6000}
-          onClose={() => setSuccess()}
-        >
-          <Alert
+          <Snackbar
+            open={success === true}
+            autoHideDuration={6000}
             onClose={() => setSuccess()}
-            severity="success"
-            sx={{ width: "100%" }}
           >
-            האימייל נשלח בהצלחה!
-          </Alert>
-        </Snackbar>
-      )}
+            <Alert
+              onClose={() => setSuccess()}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              האימייל נשלח בהצלחה!
+            </Alert>
+          </Snackbar>
+        )}
       </div>
     </div>
   );
-  
 }
