@@ -69,7 +69,7 @@ export default function Introduction({contactRef}) {
             alignItems: "center",
           }}
         >
-          <video controls preload="metadata" width="480" height="480" poster="/assets/images/videoframe_0.webp">
+          <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_0.webp">
             <source src="/assets/Firstvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -203,7 +203,7 @@ export default function Introduction({contactRef}) {
               alignItems: "center",
             }}
           >
-            <video controls preload="metadata" width="480" height="480" poster="/assets/images/videoframe_3.webp">
+            <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_3.webp">
               <source src="/assets/early.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -237,7 +237,7 @@ export default function Introduction({contactRef}) {
               alignItems: "center",
             }}
           >
-            <video controls preload="metadata" width="480" height="480" poster="/assets/images/videoframe_2.webp">
+            <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_2.webp">
               <source src="/assets/baha.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
