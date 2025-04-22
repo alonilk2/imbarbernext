@@ -70,15 +70,16 @@ export default function ApplicationForm() {
     },
     button: {
       backgroundColor: "#181a18",
-      color: "white",
+      color: "#ffd390",
       border: "none",
       borderRadius: "12px",
       padding: "14px",
-      fontWeight: "500",
+      fontWeight: "700",
       width: "100%",
       cursor: "pointer",
       marginTop: "16px",
       transition: "background-color 0.2s",
+      fontSize: "1rem"
     },
     buttonHover: {
       backgroundColor: "#181a18",

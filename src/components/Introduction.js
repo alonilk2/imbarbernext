@@ -210,7 +210,7 @@ export default function Introduction({contactRef}) {
           </div>
         </div>
 
-        <div className="text" style={isMobile ? {padding: "10% 5% 10% 5%"} : {}}>
+        <div className="text" style={isMobile ? {padding: "2%"} : {}}>
           <div className="title-first green">
             לא משנה מתי מתחילים
             <br />

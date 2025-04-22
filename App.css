@@ -1,44 +1,41 @@
-$lighter-gold: #ffd700;
-$light-gold: #ddb900;
-$light-brown: #cc7a00;
-$dark-grey: #181a18;
-$silver: #e5dada;
-$blueberry: #9680ef;
-$pistachio: #9fcc2e;
-$warmwhite: #fff4da;
-input[type="radio"] {
+input[type=radio] {
   background-color: white;
 }
+
 a {
   text-decoration: none;
 }
+
 .lighter-gold {
-  color: $lighter-gold;
+  color: #ffd700;
 }
+
 .light-brown {
-  color: $light-brown;
+  color: #cc7a00;
 }
+
 .silver {
-  color: $silver;
+  color: #e5dada;
 }
+
 .cherry {
-  color: $blueberry;
+  color: #9680ef;
 }
 
 .divider-brown {
-  border-color: $light-brown !important;
+  border-color: #cc7a00 !important;
   border-width: 1px !important;
   height: 100px !important;
 }
 
 .divider-cherry {
-  border-color: $blueberry !important;
+  border-color: #9680ef !important;
 }
 
 .App {
   width: 100%;
   direction: rtl;
-  background-color: $dark-grey;
+  background-color: #181a18;
   color: white;
   display: flex;
   flex-direction: column;
@@ -47,6 +44,7 @@ a {
   letter-spacing: 0.2px;
   font-weight: 100;
 }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -57,6 +55,7 @@ a {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
 .row {
   display: flex;
   flex-direction: row;
@@ -75,34 +74,28 @@ a {
   background-color: #000000;
   position: relative;
   border-radius: 0px 0px 25px 25px;
-  box-shadow: rgba(206, 206, 206, 0.1) 0px 8px 24px,
-    rgba(202, 202, 202, 0.1) 0px 16px 56px,
-    rgba(207, 207, 207, 0.1) 0px 24px 80px;
+  box-shadow: rgba(206, 206, 206, 0.1) 0px 8px 24px, rgba(202, 202, 202, 0.1) 0px 16px 56px, rgba(207, 207, 207, 0.1) 0px 24px 80px;
   font-family: "Rubik", cursive;
 }
 
 .App-logo-bg {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.6) 5%,
-    rgba(43, 28, 51, 0.15) 95%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 5%, rgba(43, 28, 51, 0.15) 95%);
   display: flex;
   width: 100%;
 }
-.followus {
 
+.followus {
   display: flex;
   justify-content: center;
   align-items: center;
   color: black;
-
   position: relative;
   height: 220px;
   margin-top: 2%;
   margin-bottom: 5%;
 }
+
 .followus p {
   z-index: 1;
   color: black !important;
@@ -110,12 +103,13 @@ a {
   font-style: unset !important;
   position: absolute;
   transform: translate(-50%, -50%); /* Tilt the square by 45 degrees */
-  top: 50%;          /* Vertically center */
-  left: 50%;         /* Horizontally center */
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
   white-space: nowrap;
   font-size: 2.4vw !important;
   font-weight: 900;
 }
+
 .socialsrow-follow {
   position: absolute;
   top: 70%;
@@ -123,28 +117,31 @@ a {
   display: flex;
   left: 50%;
 }
-.followus .back {
-  top: 50%;          /* Vertically center */
-  color: $light-brown !important;
-  transform: translate(-50.5%, -50.5%);
 
+.followus .back {
+  top: 50%; /* Vertically center */
+  color: #cc7a00 !important;
+  transform: translate(-50.5%, -50.5%);
 }
+
 .followus .back-1 {
-  top: 50%;          /* Vertically center */
+  top: 50%; /* Vertically center */
   color: gray !important;
   transform: translate(-50%, -46.5%);
 }
+
 .rectangle-yellow {
   position: absolute;
   width: 38vw;
   height: 10vw;
-  background-color: $light-brown;
+  background-color: #cc7a00;
   z-index: 0;
   transform: rotate(3deg) translate(-50%, -50%);
   top: 62%;
-  left: 50%;         /* Horizontally center */
+  left: 50%; /* Horizontally center */
   background-image: url("/assets/lined-paper-2.png");
 }
+
 .rectangle-white {
   position: absolute;
   width: 34vw;
@@ -152,11 +149,11 @@ a {
   background-color: white;
   z-index: 0;
   transform: rotate(-3deg) translate(-50%, -50%); /* Tilt the square by 45 degrees */
-  top: 53%;          /* Vertically center */
-  left: 51%;         /* Horizontally center */
+  top: 53%; /* Vertically center */
+  left: 51%; /* Horizontally center */
   background-image: url("/assets/lined-paper-2.png");
-
 }
+
 .App-logo {
   width: 300px;
   margin: 2% 0;
@@ -165,6 +162,7 @@ a {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 .App-header .socialsrow {
   z-index: 2;
   position: absolute;
@@ -181,24 +179,26 @@ a {
   justify-content: space-evenly;
   align-items: center;
 }
+
 .appoint {
   padding: 16px;
-  background-color: $light-brown;
+  background-color: #cc7a00;
   overflow: hidden;
   font-size: 1.2rem;
-  color: $dark-grey;
+  color: #181a18;
   position: relative;
   font-family: inherit;
   border: 0;
   min-width: 200px;
   border-radius: 18px;
 }
+
 .details-btn {
   padding: 16px;
-  background-color: $light-brown;
+  background-color: #cc7a00;
   overflow: hidden;
   font-size: 1.2rem;
-  color: $dark-grey;
+  color: #181a18;
   position: relative;
   font-family: inherit;
   border: 0;
@@ -207,9 +207,10 @@ a {
   border-radius: 18px;
   font-weight: 600;
 }
+
 .details-btn-dark {
   padding: 16px;
-  background-color: $dark-grey;
+  background-color: #181a18;
   overflow: hidden;
   font-size: 1.2rem;
   color: white;
@@ -221,12 +222,14 @@ a {
   border-radius: 18px;
   font-weight: 600;
 }
+
 .appoint:hover {
-background-color: #977011;
+  background-color: #977011;
 }
+
 .App-header .contact-btn {
   padding: 16px;
-  background-color: $silver;
+  background-color: #e5dada;
   overflow: hidden;
   font-size: 1.2rem;
   color: black;
@@ -236,9 +239,11 @@ background-color: #977011;
   min-width: 200px;
   border-radius: 18px;
 }
+
 .App-header .contact-btn:hover {
   background-color: #788385;
 }
+
 .App-header .buttons {
   display: flex;
   flex-direction: row;
@@ -283,27 +288,25 @@ background-color: #977011;
   font-weight: 400;
 }
 
-
 .line-container {
   display: flex;
   align-items: center;
   height: 32px;
   width: 500px;
-
 }
 
 .circle {
   width: 10px;
   height: 10px;
-  background-color: $light-brown;
-  border-radius: 50%; 
+  background-color: #cc7a00;
+  border-radius: 50%;
 }
 
 .line {
-  flex-grow: 1; 
+  flex-grow: 1;
   height: 1px;
   max-height: 1px;
-  background-color: $light-brown;
+  background-color: #cc7a00;
 }
 
 .white {
@@ -379,21 +382,24 @@ background-color: #977011;
   text-align: center;
   font-weight: 700;
 }
+
 .contact-section .right-pane h5 {
   margin-bottom: 4%;
   margin-top: 0;
 }
+
 .contact-text {
   font-family: "Rubik", sans-serif !important;
-
 }
+
 .first-section .gold-text {
-  color: $light-brown;
+  color: #cc7a00;
 }
 
 .first-section .right-pane h3 {
   font-weight: lighter;
 }
+
 .image-container {
   margin: auto;
   margin-bottom: 5%;
@@ -405,11 +411,13 @@ background-color: #977011;
   align-items: center;
   border-radius: 25px;
   overflow: hidden;
-  background-color: $light-brown;
+  background-color: #cc7a00;
 }
+
 .image {
   flex: 2;
 }
+
 .image-container .text {
   padding: 5%;
   font-size: 1rem;
@@ -417,12 +425,15 @@ background-color: #977011;
   font-weight: 500;
   flex: 2;
 }
+
 .image-container .text h2 {
   margin: 0;
 }
+
 .image-container img {
   max-width: 50%;
 }
+
 .second-section {
   background-image: url("/assets/2.png");
   background-position-y: 65%;
@@ -433,9 +444,7 @@ background-color: #977011;
   flex-direction: column;
   align-items: center;
   padding: 3% 0;
-  box-shadow: rgba(206, 204, 198, 0.048) 0px 8px 24px,
-    rgba(202, 202, 202, 0.062) 0px 16px 56px,
-    rgba(207, 207, 207, 0.062) 0px 24px 80px;
+  box-shadow: rgba(206, 204, 198, 0.048) 0px 8px 24px, rgba(202, 202, 202, 0.062) 0px 16px 56px, rgba(207, 207, 207, 0.062) 0px 24px 80px;
   width: 100%;
 }
 
@@ -488,6 +497,7 @@ background-color: #977011;
 .MuiTypography-root {
   text-align: right;
 }
+
 .rounded-outline {
   border: 2px dashed #c39125;
   width: 85%;
@@ -495,6 +505,7 @@ background-color: #977011;
   position: absolute;
   border-radius: 50px;
 }
+
 .third-section {
   position: relative;
   display: flex;
@@ -508,22 +519,28 @@ background-color: #977011;
 .third-section .details {
   font-size: 1rem;
 }
+
 .course-container {
   padding: 3% 5%;
   width: 90%;
 }
+
 .course-container h3 {
-  font-size: 1.35rem;;
+  font-size: 1.35rem;
 }
-.course-container ul{
+
+.course-container ul {
   margin-inline-start: 40px;
 }
+
 .course-container p {
   font-size: 1.2rem;
 }
+
 .course-container li {
   font-size: 1.2rem;
 }
+
 .third-section .lessons {
   display: flex;
   flex-direction: row;
@@ -540,13 +557,16 @@ background-color: #977011;
   justify-content: center;
   background-color: #292929 !important;
 }
+
 .MuiButton-root {
   border-color: white !important;
   color: white !important;
 }
+
 .MuiBox-root {
   background-color: #292929 !important;
 }
+
 .images {
   flex: 2.17;
   position: relative;
@@ -554,6 +574,7 @@ background-color: #977011;
   justify-content: center;
   display: flex;
 }
+
 .image-idan {
   width: 100%;
   vertical-align: top;
@@ -561,32 +582,35 @@ background-color: #977011;
   height: 950px;
   object-position: top;
 }
+
 .image-intro {
   width: 100%;
   height: 900px;
   object-fit: cover;
   vertical-align: top;
   object-position: top;
-
 }
+
 .image-idan1 {
   position: absolute;
   top: 30%;
   right: 65%;
   width: 30%;
 }
+
 .video-container {
   margin-bottom: 3%;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
 }
+
 .first-container {
   display: flex;
   width: 100%;
   overflow: hidden;
   flex-direction: row;
-  background-color: $dark-grey;
+  background-color: #181a18;
   background-image: url("/assets/lined-paper-2.png");
 }
 
@@ -599,6 +623,7 @@ background-color: #977011;
   flex: 2;
   gap: 5%;
 }
+
 .second-container {
   display: flex;
   width: 100%;
@@ -606,7 +631,7 @@ background-color: #977011;
   flex-direction: row-reverse;
   background-color: #cc7a00;
   background-image: url("/assets/lined-paper-2.png");
-  color: $dark-grey;
+  color: #181a18;
 }
 
 .second-container .text {
@@ -618,6 +643,7 @@ background-color: #977011;
   flex: 2;
   gap: 5%;
 }
+
 .idan-container {
   display: flex;
   width: 100%;
@@ -636,58 +662,66 @@ background-color: #977011;
   flex: 2;
   gap: 5%;
 }
+
 .title-first {
-  font-size: 3.0rem;
+  font-size: 3rem;
   flex-wrap: nowrap;
   display: inline;
-  color: $dark-grey;
+  color: #181a18;
   line-height: 1;
   font-weight: 400;
   font-weight: 700;
   text-align: center;
 }
+
 .green {
-  color: $light-brown;
+  color: #cc7a00;
   font-weight: 700;
 }
+
 .black {
-  color: $dark-grey;
+  color: #181a18;
   font-weight: 700;
 }
+
 .title-second {
   font-size: 4rem;
   margin-left: 10px;
-    color: white;
-    font-weight: 700;
-
+  color: white;
+  font-weight: 700;
 }
+
 .title-second-dark {
   font-size: 4rem;
   margin-left: 10px;
-    color: $dark-grey;
-    font-weight: 700;
-
+  color: #181a18;
+  font-weight: 700;
 }
+
 .title-third {
   font-size: 4rem;
-
 }
+
 .first-p {
   width: 100%;
 }
+
 .first-p p {
   font-size: 1.25rem;
   font-family: "Rubik";
   font-weight: 600;
   text-align: center;
 }
+
 .second-p {
-text-align: center;
+  text-align: center;
 }
+
 .second-p p {
   font-weight: 500;
   font-size: 1.25rem;
 }
+
 .gallery {
   position: relative;
   display: flex;
@@ -695,18 +729,21 @@ text-align: center;
   align-items: center;
   width: 95%;
 }
+
 .video-title {
   text-align: center;
   font-size: 1.4vw;
 }
+
 .gallery p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.8rem;
   font-weight: 100;
   margin: 0.5% 0;
   font-style: italic;
-  color: $silver;
+  color: #e5dada;
 }
+
 .recommendation {
   display: flex;
   flex-direction: column;
@@ -716,14 +753,16 @@ text-align: center;
   padding: 2%;
   gap: 5px;
 }
+
 .recommendation h2 {
   font-size: 2rem;
   text-align: center;
-
 }
+
 .recommendation .name {
   font-size: 1.3rem;
 }
+
 .footer {
   margin-top: 2%;
   display: flex;
@@ -731,14 +770,17 @@ text-align: center;
   align-items: center;
   padding: 5%;
 }
+
 .socials {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .social-icon {
   margin: 0 0.5%;
 }
+
 .abdev {
   display: flex;
   justify-content: center;
@@ -748,13 +790,15 @@ text-align: center;
 .abdev-img {
   width: 30%;
 }
+
 .recommended {
   position: absolute;
   display: inline-block;
   font-size: 0.9rem;
-  color: $blueberry;
+  color: #9680ef;
   transform: rotate(-15deg);
 }
+
 .review-container {
   width: 400px;
   background-color: rgba(202, 202, 202, 0.1);
@@ -764,8 +808,8 @@ text-align: center;
   align-items: flex-start;
   padding: 1%;
   margin-left: 0.5%;
-
 }
+
 .review-container-mobile {
   width: 185px;
   background-color: rgba(202, 202, 202, 0.1);
@@ -776,13 +820,16 @@ text-align: center;
   padding: 1%;
   margin-left: 0.5%;
 }
+
 .review-container p {
   font-size: 0.9vw;
   margin: 2%;
 }
+
 .review-container .name {
   font-size: 0.8vw;
 }
+
 .courseheader {
   display: flex;
   flex-direction: row;
@@ -803,6 +850,7 @@ text-align: center;
   flex: 1;
   text-align: center;
 }
+
 .courseheader-column-number {
   font-size: 2.8rem;
   margin: 0;
@@ -812,9 +860,11 @@ text-align: center;
   font-size: 1.2rem;
   margin: 0;
 }
+
 .courseheader-column-title-large {
   font-size: 1.4rem;
 }
+
 .MuiInputLabel-root {
   left: unset;
   right: 1.75rem;
@@ -827,7 +877,6 @@ text-align: center;
   display: flex;
   flex-direction: row;
   flex: 1;
-
 }
 
 .contact-section p {
@@ -845,9 +894,9 @@ text-align: center;
   flex: 1;
   font-size: 2.6rem;
   font-family: "Rubik", cursive;
-  background-color: $light-brown;
+  background-color: #cc7a00;
   padding: 2%;
-  color: $dark-grey;
+  color: #181a18;
 }
 
 .video {
@@ -859,6 +908,7 @@ text-align: center;
 .video iframe {
   border: unset;
 }
+
 @media only screen and (max-width: 1024px) {
   .App-header .titles {
     width: 90%;
@@ -879,23 +929,21 @@ text-align: center;
   .rectangle-white {
     width: 350px;
     height: 110px;
-
   }
   .title-second {
     font-size: 3.5rem;
   }
   .followus .back {
-    top: 45%;          /* Vertically center */
+    top: 45%; /* Vertically center */
     transform: translate(-50.5%, -50.5%);
-  
   }
   .followus .back-1 {
-    top: 45%;          /* Vertically center */
+    top: 45%; /* Vertically center */
     color: gray !important;
     transform: translate(-50%, -46.5%);
   }
   .followus p {
-    top: 45%;          /* Vertically center */
+    top: 45%; /* Vertically center */
     font-size: 1.8rem !important;
   }
   .first-section {
@@ -917,30 +965,26 @@ text-align: center;
   .review-container p {
     font-size: 0.8rem;
   }
-
   .recommendation h2 {
     text-align: center;
   }
   .App-header .title {
     font-size: 4.6rem;
   }
-  
 }
-
 @media only screen and (max-width: 768px) {
   .contact-section p {
     font-size: 1rem;
   }
-  
   .App-header .english-title {
     font-size: 1rem;
   }
   .courseheader-column-title-large {
     font-size: 1.2rem;
-}
+  }
   .course-container li {
     font-size: 1rem;
-}
+  }
   .first-p p {
     font-size: 1rem;
   }
@@ -963,7 +1007,7 @@ text-align: center;
     top: 70% !important;
   }
   .image-intro {
-  height: 500px;
+    height: 500px;
   }
   .first-container, .second-container, .idan-container {
     flex-direction: column;
@@ -980,7 +1024,6 @@ text-align: center;
   .images {
     min-height: 360px;
   }
-
   .idan-container {
     flex-direction: column;
     height: unset;
@@ -997,7 +1040,7 @@ text-align: center;
     padding: 0 5%;
   }
   .line-container {
-width: 90%;
+    width: 90%;
   }
   .first-section {
     margin-top: 5%;
@@ -1008,11 +1051,9 @@ width: 90%;
   }
   .App-header .title {
     font-size: 2.6rem;
-
   }
   .App-header .titles {
     width: 100%;
-
   }
   .App-header .subtitle {
     text-align: center;
@@ -1027,7 +1068,6 @@ width: 90%;
   .App-header .buttons {
     flex-direction: column;
   }
-
   .App .video {
     height: 85vh;
     object-fit: cover;
@@ -1043,18 +1083,18 @@ width: 90%;
     white-space: nowrap;
     width: 250px;
     margin-bottom: 2%;
-    font-size: 1.0rem;
-border-radius: 12px;
-padding: 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+    padding: 12px;
   }
   .App-header .contact-btn {
     font-weight: 400;
     white-space: nowrap;
     width: 250px;
     margin-bottom: 2%;
-    padding: 12px;    font-size: 1rem;
+    padding: 12px;
+    font-size: 1rem;
     border-radius: 12px;
-
   }
   .App-header .title {
     text-align: center;
@@ -1062,13 +1102,12 @@ padding: 12px;
   .third-section {
     margin: 2% 0;
     margin-bottom: 5%;
-
   }
   .first-section .right-pane {
     text-align: center;
   }
   .first-section p {
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
   .image-container {
     flex-direction: column;
@@ -1115,6 +1154,8 @@ padding: 12px;
     font-size: 1rem;
   }
   .recommendation .name {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 }
+
+/*# sourceMappingURL=App.css.map */
