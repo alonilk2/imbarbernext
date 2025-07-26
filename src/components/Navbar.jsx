@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Socials from "./Socials";
-import useWindowSize from "@/hooks/useWindowSize";
+import useResponsive from "../hooks/useResponsive";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const {width} = useWindowSize();
-  const isMobile = width < 550; // Adjust this value based on your design breakpoints
+  const { isMobile } = useResponsive();
   // Track scroll position
   useEffect(() => {
     const handleScroll = () => {

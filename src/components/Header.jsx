@@ -1,11 +1,13 @@
 import Navbar from "./Navbar";
+import { Button } from "./ui";
+import useScrollBehavior from "../hooks/useScrollBehavior";
+import { EXTERNAL_LINKS } from "../utils/constants";
 
 export default function Header({ contactRef }) {
+  const { scrollToContact } = useScrollBehavior(contactRef);
 
-  const scrollToComponent = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the component
-    }
+  const handleBookingClick = () => {
+    window.location.href = EXTERNAL_LINKS.booking;
   };
 
   return (
@@ -29,16 +31,19 @@ export default function Header({ contactRef }) {
           <h1 className="title">האקדמיה לספרות</h1>
           <h2 className="subtitle">להפוך כל ספר לאמן, כל תספורת ליצירת מופת – באקדמיה שבה הדיוק פוגש את הדמיון, והחזון הופך למקצוע.</h2>
           <div className="buttons">
-        <button
-          onClick={() => (window.location.href = "https://calmark.io/p/ff2yx")}
-          className="appoint"
-        >
-          קביעת תור לתספורת
-        </button>
-        <button onClick={scrollToComponent} className="contact-btn">
-לפרטים נוספים
-        </button>
-      </div>
+            <Button
+              onClick={handleBookingClick}
+              variant="primary"
+            >
+              קביעת תור לתספורת
+            </Button>
+            <Button 
+              onClick={scrollToContact} 
+              variant="secondary"
+            >
+              לפרטים נוספים
+            </Button>
+          </div>
         </div>
       </div>
     </header>

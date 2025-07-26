@@ -1,12 +1,11 @@
-import useWindowSize from "@/hooks/useWindowSize";
+import useResponsive from "../hooks/useResponsive";
 import { colors } from "@mui/material";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Alert, Button, Snackbar, TextField } from "@mui/material";
-
-import { publickey } from "../constants";
+import { EMAIL_CONFIG } from "../utils/constants";
 export default function ApplicationForm() {
-  const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
+  const { isMobile } = useResponsive();
 
   // סגנונות CSS מוגדרים בתוך הקומפוננטה
   const styles = {
@@ -105,10 +104,10 @@ export default function ApplicationForm() {
     try {
       console.log("ABC");
       await emailjs.sendForm(
-        "service_c0mdbl5",
-        "template_w3ffrb8",
+        EMAIL_CONFIG.serviceId,
+        EMAIL_CONFIG.templateId,
         formRef.current,
-        publickey
+        EMAIL_CONFIG.publicKey
       );
       setSuccess(true);
     } catch (error) {

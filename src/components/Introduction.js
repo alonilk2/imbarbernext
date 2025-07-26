@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
 import ScrollZoomImage from "./ScrollZoomImage";
-import useWindowSize from "@/hooks/useWindowSize";
+import { Button, VideoPlayer } from "./ui";
+import useResponsive from "../hooks/useResponsive";
+import useScrollBehavior from "../hooks/useScrollBehavior";
 
 export default function Introduction({contactRef}) {
   const [mounted, setMounted] = useState(false);
-  const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
+  const { isMobile } = useResponsive();
+  const { scrollToContact } = useScrollBehavior(contactRef);
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const scrollToComponent = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the component
-    }
-  };
 
   if (!mounted) return <></>;
   return (
@@ -55,25 +52,21 @@ export default function Introduction({contactRef}) {
                 לקריירה מצליחה!
               </strong>
             </p>
-            <button onClick={scrollToComponent} className="details-btn">
+            <Button 
+              onClick={scrollToContact} 
+              variant="details"
+            >
               לקבלת פרטים נוספים
-            </button>
+            </Button>
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_0.webp">
-            <source src="/assets/Firstvideo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <VideoPlayer
+          src="/assets/Firstvideo.mp4"
+          poster="/assets/images/videoframe_0.webp"
+          width={400}
+          height={480}
+        />
       </div>
 
       <div className="idan-container">
@@ -148,9 +141,12 @@ export default function Introduction({contactRef}) {
               בדרך.
             </p>
           </div>
-          <button onClick={scrollToComponent} className="details-btn">
+          <Button 
+            onClick={scrollToContact} 
+            variant="details"
+          >
             לקבלת פרטים נוספים
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -187,27 +183,23 @@ export default function Introduction({contactRef}) {
               <br />
             </p>
           </div>
-          <button onClick={scrollToComponent} className="details-btn-dark">
+          <Button 
+            onClick={scrollToContact} 
+            variant="detailsDark"
+          >
             לקבלת פרטים נוספים
-          </button>
+          </Button>
         </div>
       </div>
 
       <div className="first-container" style={{padding: "5% 0"}}>
         <div className="images">
-          <div
-            style={{
-              display: "flex",
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_3.webp">
-              <source src="/assets/early.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <VideoPlayer
+            src="/assets/early.mp4"
+            poster="/assets/images/videoframe_3.webp"
+            width={400}
+            height={480}
+          />
         </div>
 
         <div className="text" style={isMobile ? {padding: "2%"} : {}}>
@@ -220,28 +212,24 @@ export default function Introduction({contactRef}) {
           <div className="second-p">
             <p>תצפו בקטע קצר מאחד השיעורים אצלנו באקדמיה, ותבינו שהכל אפשרי.</p>
           </div>
-          <button onClick={scrollToComponent} className="details-btn">
+          <Button 
+            onClick={scrollToContact} 
+            variant="details"
+          >
             לקבלת פרטים נוספים
-          </button>
+          </Button>
         </div>
       </div>
 
       
       <div className="second-container" style={{padding: "5% 0"}}>
       <div className="images">
-          <div
-            style={{
-              display: "flex",
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_2.webp">
-              <source src="/assets/baha.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <VideoPlayer
+            src="/assets/baha.mp4"
+            poster="/assets/images/videoframe_2.webp"
+            width={400}
+            height={480}
+          />
         </div>
 
         <div className="text">
@@ -255,9 +243,12 @@ export default function Introduction({contactRef}) {
             <p>בוא ותראה מה יש לבהא בוגר האקדמייה שלנו לומר!
             </p>
           </div>
-          <button onClick={scrollToComponent} className="details-btn-dark">
+          <Button 
+            onClick={scrollToContact} 
+            variant="detailsDark"
+          >
             לקבלת פרטים נוספים
-          </button>
+          </Button>
         </div>
       </div>
     </section>

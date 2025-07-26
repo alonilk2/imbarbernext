@@ -1,11 +1,8 @@
 import { SiFacebook, SiInstagram, SiTiktok } from "react-icons/si";
+import { SOCIAL_LINKS } from "../utils/constants";
 
 export default function Socials({
-  links = {
-    facebook: "https://www.facebook.com/idanbarber",
-    instagram: "https://www.instagram.com/imbarber_academy",
-    tiktok: "https://www.tiktok.com/@idan_mavlayev?lang=he-IL",
-  },
+  links = SOCIAL_LINKS,
   iconSize = 24,
   containerStyle = {},
   linkStyle = {},
