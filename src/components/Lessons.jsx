@@ -1,4 +1,7 @@
 import CourseHeader from "./CourseHeader";
+import { CourseList } from "./ui";
+import { COURSE_DATA } from "../utils/constants";
+
 export default function Lessons() {
   return (
     <section className="third-section">
@@ -6,53 +9,20 @@ export default function Lessons() {
       <div className="brush">
         <h2 className="courses-title">מסלולים</h2>
       </div>
+      
       <CourseHeader
-        courseType={"קורס קבוצתי"}
-        lessonsCount={8}
-        equipType={"ציוד מתקדם"}
+        courseType={COURSE_DATA.group.type}
+        lessonsCount={COURSE_DATA.group.lessons}
+        equipType={COURSE_DATA.group.equipment}
       />
-      <div className="course-container">
-        <ul>
-          <li>יחס אישי של מדריכי האקדמיה.</li>
-          <li>עד חמישה תלמידים בשיעור.</li>
-          <li>ציורי ראש - איך להפוך כל פנס רגיל לאומנות.</li>
-          <li>עבודת מספריים - זווית גזירה, התאמת גזירה לסוג התספורת.</li>
-          <li>אפשרות לפיתוח עתידי וכניסת עבודה במספרה.</li>
-          <li>עבודה עם תער - איך להתאים סוגי מסגרות לכל סוג תספורת.</li>
-          <li>ציוד ברמה הגבוהה ביותר.</li>
-          <li>התחייבות להצלחה שלכם במידה ועמדתם בכל המטלות שקיבלתם לבית!</li>
-          <li>תורת הזקן.</li>
-          <li>
-            מעסק קטן לאימפריה - הגדרת יעדים מדויקים, פעולות עסקיות, בידול,
-            שיווק, מיינדסט מנצח ועוד!
-          </li>
-          <li>תעודה שתוכיח לקהל הלקוחות שלכם שאתם מקצוענים עם תעודות</li>
-        </ul>
-      </div>
+      <CourseList items={COURSE_DATA.group.items} />
 
       <CourseHeader
-        courseType={"אחד על אחד"}
-        lessonsCount={8}
-        equipType={"ציוד מתקדם"}
+        courseType={COURSE_DATA.oneOnOne.type}
+        lessonsCount={COURSE_DATA.oneOnOne.lessons}
+        equipType={COURSE_DATA.oneOnOne.equipment}
       />
-      <div className="course-container">
-        <ul>
-          <li>יחס אישי של מדריך האקדמייה איתכם ב-4 עיניים!</li>
-          <li>ציורי ראש - איך להפוך כל פנס רגיל לאומנות.</li>
-          <li>עבודת מספריים - זווית גזירה, התאמת גזירה לסוג התספורת.</li>
-          <li>אפשרות לפיתוח עתידי וכניסת עבודה במספרה.</li>
-          <li>עבודה עם תער - איך להתאים סוגי מסגרות לכל סוג תספורת.</li>
-          <li>ציוד ברמה הגבוהה ביותר.</li>
-          <li>התחייבות להצלחה שלך במידה ועמדת בכל המטלות שקיבלת לבית!</li>
-          <li>תורת הזקן.</li>
-          <li>
-            מעסק קטן לאימפריה - הגדרת יעדים מדויקים, פעולות עסקיות, בידול,
-            שיווק, מיינדסט מנצח ועוד!
-          </li>
-          <li>תעודה שתוכיח לקהל הלקוחות שלכם שאתם מקצוענים עם תעודות</li>
-          <li>אנטומיית הדירוג ואנטומייה כללית.</li>
-        </ul>
-      </div>
+      <CourseList items={COURSE_DATA.oneOnOne.items} />
     </section>
   );
 }
