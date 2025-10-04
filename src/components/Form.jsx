@@ -1,8 +1,7 @@
 import useWindowSize from "@/hooks/useWindowSize";
-import { colors } from "@mui/material";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Alert, Button, Snackbar, TextField } from "@mui/material";
+import { Alert, Snackbar } from "@mui/material";
 
 import { publickey } from "../constants";
 export default function ApplicationForm() {
@@ -14,23 +13,30 @@ export default function ApplicationForm() {
       maxWidth: "800px",
       margin: "40px auto",
       padding: isMobile ? "0" : "20px",
-      fontFamily: "Arial, sans-serif",
+      fontFamily: "Rubik, Arial, sans-serif",
       direction: "rtl",
-      color: "#181a18",
+      color: "#FFFFFF",
       fontSize: isMobile ? "1rem" : "1.25rem",
     },
     paper: {
-      backgroundColor: "#ffba5191",
-      borderRadius: "8px",
+      backgroundColor: "rgba(15, 15, 15, 0.95)",
+      borderRadius: "20px",
       padding: "32px",
-      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+      boxShadow: "0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(0, 127, 227, 0.15), 0 0 20px rgba(0, 127, 227, 0.2)",
+      border: "2px solid rgba(0, 127, 227, 0.3)",
+      backdropFilter: "blur(20px)",
     },
     header: {
-      color: "#181a18",
+      color: "transparent",
+      background: "linear-gradient(120deg, #FFFFFF 0%, #3d9ff0 50%, #007fe3 100%)",
+      WebkitBackgroundClip: "text",
+      backgroundClip: "text",
       textAlign: "center",
       marginBottom: "32px",
-      fontSize: "22px",
-      fontWeight: "bold",
+      fontSize: "28px",
+      fontWeight: "800",
+      textShadow: "0 0 20px rgba(0, 127, 227, 0.3)",
+      filter: "drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8))",
     },
     formControl: {
       marginBottom: "24px",
@@ -40,16 +46,19 @@ export default function ApplicationForm() {
       display: "block",
       marginBottom: "8px",
       fontWeight: "500",
+      color: "#FFFFFF",
     },
     textField: {
       width: "100%",
       padding: "12px",
-      border: "1px solid transparent",
+      border: "2px solid rgba(0, 127, 227, 0.4)",
       borderRadius: "12px",
       resize: "vertical",
       boxSizing: "border-box",
-      backgroundColor: "#ffd390",
-      color: "black",
+      backgroundColor: "rgba(26, 26, 26, 0.8)",
+      color: "#FFFFFF",
+      transition: "all 0.3s ease",
+      outline: "none",
     },
     radioGroup: {
       display: "flex",
@@ -60,29 +69,36 @@ export default function ApplicationForm() {
       display: "flex",
       alignItems: "center",
       cursor: "pointer",
+      color: "#FFFFFF",
     },
     radio: {
       marginLeft: "8px",
       width: "18px",
       height: "18px",
-      accentColor: "white",
-      backgroundColor: "white !important",
+      accentColor: "#007fe3",
+      cursor: "pointer",
     },
     button: {
-      backgroundColor: "#181a18",
-      color: "#ffd390",
-      border: "none",
+      background: "linear-gradient(135deg, #007fe3 0%, #005bb5 100%)",
+      color: "#000000",
+      border: "2px solid #007fe3",
       borderRadius: "12px",
       padding: "14px",
       fontWeight: "700",
       width: "100%",
       cursor: "pointer",
       marginTop: "16px",
-      transition: "background-color 0.2s",
-      fontSize: "1rem"
+      transition: "all 0.3s ease",
+      fontSize: "1rem",
+      textTransform: "uppercase",
+      letterSpacing: "1.5px",
+      boxShadow: "0 0 20px rgba(0, 127, 227, 0.2), 0 0 15px rgba(0, 127, 227, 0.2)",
     },
     buttonHover: {
-      backgroundColor: "#181a18",
+      background: "linear-gradient(135deg, #3d9ff0 0%, #007fe3 100%)",
+      transform: "translateY(-3px) scale(1.02)",
+      boxShadow: "0 10px 50px rgba(0, 127, 227, 0.25), 0 0 25px rgba(0, 127, 227, 0.3)",
+      borderColor: "#3d9ff0",
     },
   };
   const formRef = useRef({
@@ -322,13 +338,18 @@ export default function ApplicationForm() {
           <button
             type="submit"
             style={styles.button}
-            onMouseOver={(e) =>
-              (e.target.style.backgroundColor =
-                styles.buttonHover.backgroundColor)
-            }
-            onMouseOut={(e) =>
-              (e.target.style.backgroundColor = styles.button.backgroundColor)
-            }
+            onMouseOver={(e) => {
+              e.target.style.background = styles.buttonHover.background;
+              e.target.style.transform = styles.buttonHover.transform;
+              e.target.style.boxShadow = styles.buttonHover.boxShadow;
+              e.target.style.borderColor = styles.buttonHover.borderColor;
+            }}
+            onMouseOut={(e) => {
+              e.target.style.background = styles.button.background;
+              e.target.style.transform = "none";
+              e.target.style.boxShadow = styles.button.boxShadow;
+              e.target.style.borderColor = styles.button.borderColor;
+            }}
           >
             שלח טופס
           </button>

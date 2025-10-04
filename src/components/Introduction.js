@@ -56,7 +56,7 @@ export default function Introduction({contactRef}) {
               </strong>
             </p>
             <button onClick={scrollToComponent} className="details-btn">
-              לקבלת פרטים נוספים
+              לפרטים נוספים
             </button>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function Introduction({contactRef}) {
             </p>
           </div>
           <button onClick={scrollToComponent} className="details-btn">
-            לקבלת פרטים נוספים
+            לפרטים נוספים
           </button>
         </div>
       </div>
@@ -188,7 +188,7 @@ export default function Introduction({contactRef}) {
             </p>
           </div>
           <button onClick={scrollToComponent} className="details-btn-dark">
-            לקבלת פרטים נוספים
+            לפרטים נוספים
           </button>
         </div>
       </div>
@@ -221,7 +221,7 @@ export default function Introduction({contactRef}) {
             <p>תצפו בקטע קצר מאחד השיעורים אצלנו באקדמיה, ותבינו שהכל אפשרי.</p>
           </div>
           <button onClick={scrollToComponent} className="details-btn">
-            לקבלת פרטים נוספים
+            לפרטים נוספים
           </button>
         </div>
       </div>
@@ -256,7 +256,7 @@ export default function Introduction({contactRef}) {
             </p>
           </div>
           <button onClick={scrollToComponent} className="details-btn-dark">
-            לקבלת פרטים נוספים
+            לפרטים נוספים
           </button>
         </div>
       </div>

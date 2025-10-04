@@ -1,7 +1,7 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { RowsPhotoAlbum } from "react-photo-album";
-import useWindowSize from "../hooks/useWindowSize";
-import Slideshow from "./Slideshow";
 import Socials from "./Socials";
+import useWindowSize from "@/hooks/useWindowSize";
 import "react-photo-album/rows.css";
 
 const photos = [
@@ -91,24 +91,27 @@ const photos = [
     src: "/assets/images/IMG_5116-min.jpg",
     width: 400,
     height: 700,
-  },  {
+  },
+  {
     src: "/assets/images/IMG_5126-min.jpg",
     width: 400,
     height: 700,
-    },  {
+  },
+  {
     src: "/assets/images/IMG_5127-min.jpg",
     width: 400,
     height: 700,
-    },  {
+  },
+  {
     src: "/assets/images/IMG_5128-min.jpg",
     width: 400,
     height: 700,
-  },  {
+  },
+  {
     src: "/assets/images/IMG_5129-min.jpg",
     width: 400,
     height: 700,
   },
-
 
   {
     src: "/assets/images/IMG_2076-min.jpg",
@@ -130,27 +133,33 @@ const photos = [
     src: "/assets/images/IMG_2092-min.jpg",
     width: 400,
     height: 600,
-  },  {
+  },
+  {
     src: "/assets/images/IMG_2101-min.jpg",
     width: 400,
     height: 600,
-    },  {
+  },
+  {
     src: "/assets/images/IMG_2132-min.jpg",
     width: 400,
     height: 600,
-    },  {
+  },
+  {
     src: "/assets/images/IMG_2136-min.jpg",
     width: 400,
     height: 600,
-  },  {
+  },
+  {
     src: "/assets/images/IMG_2161-min.jpg",
     width: 400,
     height: 600,
-  },  {
+  },
+  {
     src: "/assets/images/IMG_2174-min.jpg",
     width: 400,
     height: 600,
-  },  {
+  },
+  {
     src: "/assets/images/IMG_2182-min.jpg",
     width: 400,
     height: 600,
@@ -189,39 +198,192 @@ const reviews = [
     author_name: "Rial Howari",
     text: "מספרה מס' 1 בצפון!! נוחות, יחס אדיב, מקצועיות וכל מה שאתם צריכים במקום אחד מקצועי. מבטיח תגיעו פעם אחת אתם תתאהבו במקום! חוזר ואומר מקצועיות ואמינות 100% ממליץ בחום!",
   },
-
 ];
+
+const SLIDE_INTERVAL = 6000;
 
 export default function FourthSection() {
   const { width } = useWindowSize();
+  const slidesToShow = useMemo(() => {
+    if (!width) {
+      return 1;
+    }
+    if (width < 600) {
+      return 1;
+    }
+    if (width < 1024) {
+      return 2;
+    }
+    return 3;
+  }, [width]);
+
+  const maxIndex = Math.max(0, reviews.length - slidesToShow);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(null);
+
+  useEffect(() => {
+    setCurrentIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex]);
+
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => {
+      if (prev >= maxIndex) {
+        return 0;
+      }
+      return prev + 1;
+    });
+  }, [maxIndex]);
+
+  const handlePrev = useCallback(() => {
+    setCurrentIndex((prev) => {
+      if (prev <= 0) {
+        return maxIndex;
+      }
+      return prev - 1;
+    });
+  }, [maxIndex]);
+
+  useEffect(() => {
+    if (isPaused || reviews.length <= slidesToShow) {
+      return undefined;
+    }
+
+    const autoplayTimer = setInterval(() => {
+      handleNext();
+    }, SLIDE_INTERVAL);
+
+    return () => clearInterval(autoplayTimer);
+  }, [handleNext, isPaused, slidesToShow]);
+
+  const handleDotClick = useCallback(
+    (index) => {
+      setCurrentIndex(index);
+    },
+    []
+  );
+
+  const handleTouchStart = useCallback((event) => {
+    touchStartX.current = event.touches[0].clientX;
+    setIsPaused(true);
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (event) => {
+      if (touchStartX.current === null) {
+        setIsPaused(false);
+        return;
+      }
+
+      const deltaX = event.changedTouches[0].clientX - touchStartX.current;
+      if (Math.abs(deltaX) > 50) {
+        if (deltaX > 0) {
+          handlePrev();
+        } else {
+          handleNext();
+        }
+      }
+
+      touchStartX.current = null;
+      setIsPaused(false);
+    },
+    [handleNext, handlePrev]
+  );
+
+  const sliderTrackStyle = useMemo(
+    () => ({
+      "--slides-to-show": slidesToShow,
+      "--slide-index": currentIndex,
+    }),
+    [slidesToShow, currentIndex]
+  );
+
+  const pageCount = maxIndex + 1;
 
   return (
     <section className="gallery">
       <div className="followus">
         <div className="rectangle-yellow" />
-        <div className="rectangle-white" />
+        <div className="rectangle-white">
+          <p className="back">יש מצב שאתה עוד לא עוקב?!</p>
+          <p className="back-1">יש מצב שאתה עוד לא עוקב?!</p>
 
-        <p className="back">יש מצב שאתה עוד לא עוקב?!</p>
-        <p className="back-1">יש מצב שאתה עוד לא עוקב?!</p>
-        <p className="front">יש מצב שאתה עוד לא עוקב?!</p>
-        <div className="socialsrow-follow">
-          <Socials
-            iconSize={48}
-            linkStyle={{ color: "#cc7a00" }}
-            containerStyle={{ marginTop: "5%" }}
-          />
+          <div className="socialsrow-follow">
+            <Socials
+              iconSize={48}
+              linkStyle={{ color: "#007fe3" }}
+              containerStyle={{ marginTop: "5%" }}
+            />
+          </div>
         </div>
       </div>
 
-
-
       <div className="recommendation">
-        <h2>לקוחות ממליצים:</h2>
-
-        <Slideshow reviews={reviews} />
+        <div className="brush brush--headline">
+          <h2 className="gallery__headline" style={{fontSize: '32px'}}>לקוחות ממליצים:</h2>
+        </div>
+        <div
+          className="reviews-slider"
+          role="region"
+          aria-label="סיפורי לקוחות"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="reviews-slider__viewport">
+            <div className="reviews-slider__track" style={sliderTrackStyle}>
+              {reviews.map((review) => (
+                <article className="reviews-slider__card" key={review.author_name}>
+                  <div className="reviews-slider__card-inner">
+                    <p className="reviews-slider__text">{review.text}</p>
+                    <p className="reviews-slider__author">{review.author_name}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          {reviews.length > slidesToShow && (
+            <>
+              <button
+                type="button"
+                className="reviews-slider__nav reviews-slider__nav--prev"
+                onClick={handlePrev}
+                aria-label="המלצה קודמת"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                className="reviews-slider__nav reviews-slider__nav--next"
+                onClick={handleNext}
+                aria-label="המלצה הבאה"
+              >
+                ›
+              </button>
+              <div className="reviews-slider__dots" role="tablist" aria-label="בחירת המלצה">
+                {Array.from({ length: pageCount }).map((_, index) => {
+                  const isActive = index === currentIndex;
+                  return (
+                    <button
+                      key={`review-dot-${index}`}
+                      type="button"
+                      className={`reviews-slider__dot${isActive ? " reviews-slider__dot--active" : ""}`}
+                      onClick={() => handleDotClick(index)}
+                      aria-label={`הצגת המלצות עמוד ${index + 1}`}
+                      aria-pressed={isActive}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          )}
+        </div>
       </div>
       <div className="recommendation">
-        <h2>הצצה לתהליך:</h2>
+        <div className="brush brush--headline">
+          <h2 className="gallery__headline" style={{fontSize: '32px'}}>הצצה לתהליך:</h2>
+        </div>
 
         <RowsPhotoAlbum photos={photos} targetRowHeight={600} />
       </div>

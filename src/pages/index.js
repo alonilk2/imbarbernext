@@ -4,6 +4,7 @@ import FourthSection from "@/components/FourthSection";
 import Header from "@/components/Header";
 import Introduction from "@/components/Introduction";
 import Lessons from "@/components/Lessons";
+import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 
@@ -36,23 +37,29 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>IM.Barber - Academy and Barbershop - האקדמיה לספרות</title>
+        <title>Mavlayev Academy - האקדמיה לספרות</title>
         <meta
           name="description"
-          content="ברוכים הבאים לIM.Barber - Academy & Barbershop, חנות המוצרים והאקדמיה לספרות של IM.Barber, מוצרים למספרות, שיער, מכונות תספורת'"
+          content="ברוכים הבאים לMavlayev Academy - Academy & Barbershop, האקדמיה לספרות של Mavlayev Academy, מספרה לגברים ומוצרי שיער וטיפוח בנוף הגליל"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="IM.Barber - אקדמיה לספרות, מספרה, מוצרי שיער וטיפוח" />
+        <meta
+          property="og:title"
+          content="Mavlayev Academy - אקדמיה לספרות, מספרה לגברים, מוצרי שיער וטיפוח בנוף הגליל"
+        />
         <meta
           property="og:image"
           content="https://alonilk2.github.io/map1/logo-barber.png"
         />
         <meta
           property="og:description"
-          content="ברוכים הבאים לIM.Barber - Academy & Barbershop, חנות המוצרים והאקדמיה לספרות של IM.Barber, מוצרים למספרות, שיער, מכונות תספורת"
+          content="ברוכים הבאים לMavlayev Academy - Academy & Barbershop, האקדמיה לספרות של Mavlayev Academy, מספרה לגברים ומוצרי שיער וטיפוח בנוף הגליל"
         />
         <meta property="og:url" content="https://www.imbarber.com" />
-        <meta name="keywords" content="IM.Barber, Academy, Barbershop, ספרות, תספורת, אקדמיה, מספרה, מוצרים למספרות, שיער, מכונות תספורת" />
+        <meta
+          name="keywords"
+          content="Mavlayev, Academy, Barbershop, ספרות, נוף הגליל, תספורת, אקדמיה, מספרה, מוצרים למספרות, שיער, מכונות תספורת, מוצרי שיער, טיפוח, קורסים לספרות, קורסים לתספורת, לימודי ספרות, לימודי תספורת, הדרכות לספרים, הדרכות לתספורת, סדנאות לספרות, סדנאות לתספורת, מקצוע הספרות, מקצוע התספורת, ספרות גברים, ספר גברים, תספורת גברים, עיצוב שיער גברים"
+        />
         <meta name="author" content="Idan Mavlayev" />
         <link rel="icon" href="favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,6 +70,8 @@ export default function Home() {
         />
       </Head>
       <div className="App">
+        <Navbar />
+
         <Header contactRef={contactRef} />
         <Introduction contactRef={contactRef} />
         <Lessons />

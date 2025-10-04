@@ -3,8 +3,8 @@ export default function Lessons() {
   return (
     <section className="third-section">
       <div className="rounded-outline"></div>
-      <div className="brush">
-        <h2 className="courses-title">מסלולים</h2>
+      <div className="brush brush--headline" style={{marginTop: '24px'}}>
+        <h2 className="courses-title" style={{fontSize: '32px'}}>מסלולים</h2>
       </div>
       <CourseHeader
         courseType={"קורס קבוצתי"}

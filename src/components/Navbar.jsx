@@ -4,9 +4,9 @@ import useWindowSize from "@/hooks/useWindowSize";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const {width} = useWindowSize();
-  const isMobile = width < 550; // Adjust this value based on your design breakpoints
-  // Track scroll position
+  const { width } = useWindowSize();
+  const isMobile = width < 550;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -19,22 +19,12 @@ const Navbar = () => {
     };
   }, []);
 
-  // Calculate background opacity based on scroll position (max opacity at 200px scroll)
-  const backgroundOpacity = Math.min(scrollPosition / 200, 1);
+  const isScrolled = scrollPosition > 40;
+  const easedScroll = Math.min(scrollPosition / 200, 1);
+  const navHeight = 110 - easedScroll * 40;
+  const logoSize = isMobile ? 160 : 220 - easedScroll * 30;
+  const verticalPadding = 20 - easedScroll * 8;
 
-  // Calculate height reduction (max reduction at 200px scroll)
-  // Starting at 80px height, reducing to 60px
-  const heightReduction = Math.min(scrollPosition / 200, 1) * 20;
-  const navHeight = 90 - heightReduction;
-  
-  // Calculate logo size reduction (from 24px to 18px)
-  const logoSizeReduction = Math.min(scrollPosition / 200, 1) * 40;
-  const logoSize = isMobile ? 200 : 250 - logoSizeReduction;
-  
-  // Calculate padding reduction (from 20px to 12px)
-  const paddingReduction = Math.min(scrollPosition / 200, 1) * 8;
-  const verticalPadding = 20 - paddingReduction;
-  
   const navStyles = {
     position: 'fixed',
     top: 0,
@@ -43,14 +33,16 @@ const Navbar = () => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: isMobile ? `${verticalPadding}px 5%` :`${verticalPadding}px 50px`,
+    padding: isMobile ? `${verticalPadding}px 5%` : `${verticalPadding}px 50px`,
     height: `${navHeight}px`,
-    backgroundColor: `rgba(0, 0, 0, ${backgroundOpacity})`,
+    backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
     color: '#fff',
     transition: 'all 0.3s ease',
     zIndex: 1000,
     boxSizing: 'border-box',
     flexDirection: 'row-reverse',
+    boxShadow: isScrolled ? '0 20px 40px rgba(0, 0, 0, 0.35)' : 'none',
+    backdropFilter: isScrolled ? 'blur(10px)' : 'none',
   };
   
   const logoContainerStyles = {
@@ -58,17 +50,22 @@ const Navbar = () => {
     display: 'flex',
     justifyContent: 'flex-end',
     paddingTop: '5px',
+    opacity: isScrolled ? 1 : 0,
+    transform: isScrolled ? 'translateY(0px)' : 'translateY(-16px)',
+    transition: 'opacity 0.3s ease, transform 0.3s ease',
+    pointerEvents: isScrolled ? 'auto' : 'none',
   };
   
   const logoStyles = {
     transition: 'font-size 0.3s ease',
     width: `${logoSize}px`,
+    filter: 'drop-shadow(0 0 28px rgba(0, 151, 255, 0.4))',
   };
 
   return (
     <nav style={navStyles}>
-      <div style={logoContainerStyles}>
-        <img style={logoStyles} src={"/assets/logo.svg"} alt="logo" />
+      <div style={logoContainerStyles} aria-hidden={!isScrolled}>
+        <img style={logoStyles} src={"/assets/flatlogo.png"} alt="logo" />
       </div>
       <Socials iconSize={32} />
     </nav>
