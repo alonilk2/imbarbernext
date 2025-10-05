@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ScrollZoomImage from "./ScrollZoomImage";
+import { withBasePath } from "@/constants";
 
 export default function Introduction({contactRef}) {
   const [mounted, setMounted] = useState(false);
@@ -53,8 +54,12 @@ export default function Introduction({contactRef}) {
 
         <div className="video-column video-column--media">
           <div className="media-frame">
-            <video controls preload="metadata" poster="/assets/images/videoframe_0.webp">
-            <source src="/assets/Firstvideo.mp4" type="video/mp4" />
+            <video
+              controls
+              preload="metadata"
+              poster={withBasePath("/assets/images/videoframe_0.webp")}
+            >
+            <source src={withBasePath("/assets/Firstvideo.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
             </video>
           </div>
@@ -64,7 +69,7 @@ export default function Introduction({contactRef}) {
       <div className="idan-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/idan.jpg"}
+            imageSrc={withBasePath("/assets/images/idan.jpg")}
             maxScale={1.5}
             minScale={1}
             imageAlt="עידן מבלייב"
@@ -105,7 +110,7 @@ export default function Introduction({contactRef}) {
       <div className="first-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/intro-2.webp"}
+            imageSrc={withBasePath("/assets/images/intro-2.webp")}
             maxScale={1.7}
             minScale={1}
             imageAlt="תמונת רקע"
@@ -142,7 +147,7 @@ export default function Introduction({contactRef}) {
       <div className="second-container">
         <div className="images">
           <ScrollZoomImage
-            imageSrc={"/assets/images/intro-1.webp"}
+            imageSrc={withBasePath("/assets/images/intro-1.webp")}
             maxScale={1.7}
             minScale={1}
             imageAlt="הצצה לקורס"
@@ -181,8 +186,12 @@ export default function Introduction({contactRef}) {
       <div className="first-container first-container--media">
         <div className="images">
           <div className="media-frame">
-            <video controls preload="metadata" poster="/assets/images/videoframe_3.webp">
-              <source src="/assets/early.mp4" type="video/mp4" />
+            <video
+              controls
+              preload="metadata"
+              poster={withBasePath("/assets/images/videoframe_3.webp")}
+            >
+              <source src={withBasePath("/assets/early.mp4")} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -208,8 +217,12 @@ export default function Introduction({contactRef}) {
       <div className="second-container second-container--media">
       <div className="images">
           <div className="media-frame">
-            <video controls preload="metadata" poster="/assets/images/videoframe_2.webp">
-              <source src="/assets/baha.mp4" type="video/mp4" />
+            <video
+              controls
+              preload="metadata"
+              poster={withBasePath("/assets/images/videoframe_2.webp")}
+            >
+              <source src={withBasePath("/assets/baha.mp4")} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Socials from "./Socials";
 import useWindowSize from "@/hooks/useWindowSize";
+import { withBasePath } from "@/constants";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -50,7 +51,7 @@ const Navbar = () => {
       <a className="navbar__brand" href="#top" aria-label="דף הבית">
         <img
           className="navbar__logo"
-          src={"/assets/flatlogo.png"}
+          src={withBasePath("/assets/flatlogo.png")}
           alt="Mavlayev Academy"
         />
       </a>

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Socials from "./Socials";
 import useWindowSize from "@/hooks/useWindowSize";
+import { withBasePath } from "@/constants";
 import "react-photo-album/rows.css";
 
 const RowsPhotoAlbum = dynamic(
@@ -16,7 +17,7 @@ const RowsPhotoAlbum = dynamic(
   }
 );
 
-const photos = [
+const rawPhotos = [
   {
     src: "/assets/images/IMG_2693.jpg",
     width: 300,
@@ -177,6 +178,11 @@ const photos = [
     height: 600,
   },
 ];
+
+const photos = rawPhotos.map(({ src, ...rest }) => ({
+  src: withBasePath(src),
+  ...rest,
+}));
 
 const reviews = [
   {

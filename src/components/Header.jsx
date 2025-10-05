@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { withBasePath } from "@/constants";
 
 export default function Header({ contactRef }) {
   const [shouldAutoplay, setShouldAutoplay] = useState(false);
@@ -79,7 +80,7 @@ export default function Header({ contactRef }) {
           preload="metadata"
           controls={requiresUserInteraction || !isMuted}
         >
-          <source src={"/assets/1.webm"} type="video/webm" />
+          <source src={withBasePath("/assets/1.webm")} type="video/webm" />
           הדפדפן שלך אינו תומך בניגון וידאו.
         </video>
         {requiresUserInteraction && (
@@ -105,7 +106,7 @@ export default function Header({ contactRef }) {
           </div>
 
           <img
-            src="/assets/logo.png"
+            src={withBasePath("/assets/logo.png")}
             alt="לוגו אקדמיית Mavlayev"
             className="academy-logo"
             loading="lazy"

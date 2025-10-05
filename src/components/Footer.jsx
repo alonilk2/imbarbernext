@@ -1,10 +1,12 @@
+import { withBasePath } from "@/constants";
+
 export default function Footer() {
   return (
     <footer className="footer">
       <p>כל הזכויות שמורות © Idan Mavlayev 2025</p>
       <p>Contact us at <a href="mailto:imbarberil2@gmail.com">imbarberil2@gmail.com</a></p>
       <a className="abdev" href="https://alondev.com/">
-        <img src={"/assets/abdev.webp"} alt="ABdev Logo" className="abdev-img" />
+  <img src={withBasePath("/assets/abdev.webp")} alt="ABdev Logo" className="abdev-img" />
         <span
           style={{
             color: "white",
