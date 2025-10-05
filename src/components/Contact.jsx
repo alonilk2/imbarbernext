@@ -2,15 +2,18 @@ import { forwardRef } from "react";
 import useWindowSize from "../hooks/useWindowSize";
 import Form from "./Form";
 
+const MAP_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
+
+const buildMapUrl = ({ size, zoom }) =>
+  `https://maps.googleapis.com/maps/api/staticmap?markers=color:white%7Ccenter=Halulav+St+25%2C+Nof+Hagalil&scale=2&zoom=${zoom}&size=${size}&maptype=roadmap&format=png${
+    MAP_KEY ? `&key=${MAP_KEY}` : ""
+  }&map_id=ac719b618b3ec786`;
+
 const MAP_URLS = {
-  small:
-    "https://maps.googleapis.com/maps/api/staticmap?markers=color:white%7Ccenter=Halulav+St+25%2C+Nof+Hagalil&scale=2&zoom=17&size=400x350&maptype=roadmap&format=png&key=AIzaSyBlCaoKEmsCM4fZtL6PAJgzGu9B2Nc2fxg&map_id=ac719b618b3ec786",
-  medium:
-    "https://maps.googleapis.com/maps/api/staticmap?markers=color:white%7Ccenter=Halulav+St+25%2C+Nof+Hagalil&scale=2&zoom=16&size=500x150&maptype=roadmap&format=png&key=AIzaSyBlCaoKEmsCM4fZtL6PAJgzGu9B2Nc2fxg&map_id=ac719b618b3ec786",
-  large:
-    "https://maps.googleapis.com/maps/api/staticmap?markers=color:white%7Ccenter=Halulav+St+25%2C+Nof+Hagalil&scale=2&zoom=16&size=550x250&maptype=roadmap&format=png&key=AIzaSyBlCaoKEmsCM4fZtL6PAJgzGu9B2Nc2fxg&map_id=ac719b618b3ec786",
-  xlarge:
-    "https://maps.googleapis.com/maps/api/staticmap?markers=color:white%7Ccenter=Halulav+St+25%2C+Nof+Hagalil&scale=2&zoom=16&size=1800x1024&maptype=roadmap&format=png&key=AIzaSyBlCaoKEmsCM4fZtL6PAJgzGu9B2Nc2fxg&map_id=ac719b618b3ec786",
+  small: buildMapUrl({ size: "400x350", zoom: 17 }),
+  medium: buildMapUrl({ size: "500x150", zoom: 16 }),
+  large: buildMapUrl({ size: "550x250", zoom: 16 }),
+  xlarge: buildMapUrl({ size: "1800x1024", zoom: 16 }),
 };
 
 const MAP_ALT_TEXT = "מפת הגעה לאקדמיית IM Barber ברחוב יקינטון 3, נוף הגליל";
