@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import ScrollZoomImage from "./ScrollZoomImage";
-import useWindowSize from "@/hooks/useWindowSize";
 
 export default function Introduction({contactRef}) {
   const [mounted, setMounted] = useState(false);
-  const isMobile = useWindowSize().width < 550; // Adjust this value based on your design breakpoints
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -21,15 +19,7 @@ export default function Introduction({contactRef}) {
       <div className="introduction"></div>
 
       <div className="video-container">
-        <div
-          style={{
-            display: "flex",
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
+        <div className="video-column">
           <h2 style={{marginBottom: '5%'}}>העתיד שלך מתחיל כאן!</h2>
           <div className="left-pane">
             <p>
@@ -61,18 +51,13 @@ export default function Introduction({contactRef}) {
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_0.webp">
+        <div className="video-column video-column--media">
+          <div className="media-frame">
+            <video controls preload="metadata" poster="/assets/images/videoframe_0.webp">
             <source src="/assets/Firstvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+            </video>
+          </div>
         </div>
       </div>
 
@@ -193,24 +178,17 @@ export default function Introduction({contactRef}) {
         </div>
       </div>
 
-      <div className="first-container" style={{padding: "5% 0"}}>
+      <div className="first-container first-container--media">
         <div className="images">
-          <div
-            style={{
-              display: "flex",
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_3.webp">
+          <div className="media-frame">
+            <video controls preload="metadata" poster="/assets/images/videoframe_3.webp">
               <source src="/assets/early.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
 
-        <div className="text" style={isMobile ? {padding: "2%"} : {}}>
+  <div className="text">
           <div className="title-first green">
             לא משנה מתי מתחילים
             <br />
@@ -227,17 +205,10 @@ export default function Introduction({contactRef}) {
       </div>
 
       
-      <div className="second-container" style={{padding: "5% 0"}}>
+      <div className="second-container second-container--media">
       <div className="images">
-          <div
-            style={{
-              display: "flex",
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <video controls preload="metadata" width="400" height="480" poster="/assets/images/videoframe_2.webp">
+          <div className="media-frame">
+            <video controls preload="metadata" poster="/assets/images/videoframe_2.webp">
               <source src="/assets/baha.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>

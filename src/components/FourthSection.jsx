@@ -302,17 +302,18 @@ export default function FourthSection() {
 
   return (
     <section className="gallery">
-      <div className="followus">
-        <div className="rectangle-yellow" />
-        <div className="rectangle-white">
-          <p className="back">יש מצב שאתה עוד לא עוקב?!</p>
-          <p className="back-1">יש מצב שאתה עוד לא עוקב?!</p>
-
-          <div className="socialsrow-follow">
+      <div className="followus layout-container">
+        <div className="followus__card">
+          <p className="followus__eyebrow">יש מצב שאתה עוד לא עוקב?</p>
+          <h2 className="followus__title">הצטרפו לקהילה שלנו</h2>
+          <p className="followus__subtitle">
+            קבלו הצצות מאחורי הקלעים, טיפים יומיומיים וטרנדים חמים לפני כולם.
+          </p>
+          <div className="followus__socials">
             <Socials
-              iconSize={48}
-              linkStyle={{ color: "#007fe3" }}
-              containerStyle={{ marginTop: "5%" }}
+              iconSize={40}
+              linkStyle={{ color: "var(--color-ice-white)" }}
+              containerStyle={{ gap: "clamp(0.75rem, 2vw, 1.5rem)" }}
             />
           </div>
         </div>

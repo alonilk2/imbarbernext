@@ -69,8 +69,8 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="App">
-        <Navbar />
+  <div className="App" id="top">
+        <Navbar contactRef={contactRef} />
 
         <Header contactRef={contactRef} />
         <Introduction contactRef={contactRef} />

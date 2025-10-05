@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Socials from "./Socials";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const Navbar = () => {
+const Navbar = ({ contactRef }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { width } = useWindowSize();
   const isMobile = width < 550;
@@ -19,55 +19,62 @@ const Navbar = () => {
     };
   }, []);
 
-  const isScrolled = scrollPosition > 40;
-  const easedScroll = Math.min(scrollPosition / 200, 1);
-  const navHeight = 110 - easedScroll * 40;
-  const logoSize = isMobile ? 160 : 220 - easedScroll * 30;
-  const verticalPadding = 20 - easedScroll * 8;
+  const isScrolled = scrollPosition > 32;
+  const easedScroll = Math.min(scrollPosition / 240, 1);
 
-  const navStyles = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: isMobile ? `${verticalPadding}px 5%` : `${verticalPadding}px 50px`,
-    height: `${navHeight}px`,
-    backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
-    color: '#fff',
-    transition: 'all 0.3s ease',
-    zIndex: 1000,
-    boxSizing: 'border-box',
-    flexDirection: 'row-reverse',
-    boxShadow: isScrolled ? '0 20px 40px rgba(0, 0, 0, 0.35)' : 'none',
-    backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+  const metrics = useMemo(() => {
+    const baseHeight = isMobile ? 88 : 104;
+    const minHeight = isMobile ? 68 : 80;
+    const basePadding = isMobile ? 16 : 20;
+    const minPadding = isMobile ? 10 : 14;
+    const baseLogo = isMobile ? 140 : 210;
+    const minLogo = isMobile ? 110 : 160;
+
+    const height = Math.max(minHeight, baseHeight - easedScroll * 36);
+    const padding = Math.max(minPadding, basePadding - easedScroll * 10);
+    const logo = Math.max(minLogo, baseLogo - easedScroll * 50);
+
+    return { height, padding, logo };
+  }, [easedScroll, isMobile]);
+
+  const navClassName = `navbar${isScrolled ? " navbar--scrolled" : ""}`;
+
+  const navStyle = {
+    "--nav-height": `${metrics.height}px`,
+    "--nav-padding-block": `${metrics.padding}px`,
+    "--logo-size": `${metrics.logo}px`,
   };
-  
-  const logoContainerStyles = {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'flex-end',
-    paddingTop: '5px',
-    opacity: isScrolled ? 1 : 0,
-    transform: isScrolled ? 'translateY(0px)' : 'translateY(-16px)',
-    transition: 'opacity 0.3s ease, transform 0.3s ease',
-    pointerEvents: isScrolled ? 'auto' : 'none',
-  };
-  
-  const logoStyles = {
-    transition: 'font-size 0.3s ease',
-    width: `${logoSize}px`,
-    filter: 'drop-shadow(0 0 28px rgba(0, 151, 255, 0.4))',
+
+  const handleScrollToContact = () => {
+    if (contactRef?.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    const fallback = document.getElementById("contact-section");
+    if (fallback) {
+      fallback.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <nav style={navStyles}>
-      <div style={logoContainerStyles} aria-hidden={!isScrolled}>
-        <img style={logoStyles} src={"/assets/flatlogo.png"} alt="logo" />
+    <nav className={navClassName} style={navStyle} aria-label="סרגל ניווט ראשי">
+      <a className="navbar__brand" href="#top" aria-label="דף הבית">
+        <img
+          className="navbar__logo"
+          src={"/assets/flatlogo.png"}
+          alt="Mavlayev Academy"
+        />
+      </a>
+      <div className="navbar__actions">
+        <Socials iconSize={isMobile ? 24 : 28} />
+        <button
+          type="button"
+          className="button button--primary button--compact navbar__cta"
+          onClick={handleScrollToContact}
+        >
+          לתאם שיחת ייעוץ
+        </button>
       </div>
-      <Socials iconSize={32} />
     </nav>
   );
 };

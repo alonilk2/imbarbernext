@@ -4,15 +4,16 @@ import { createElement } from "react";
 
 const styles = {
   fixedContainer: {
-    height: 900,
     overflow: "hidden",
     width: "100%",
+    position: "relative",
+    borderRadius: "16px",
   },
   fixedContainerMobile: {
-    height: 500,
     overflow: "hidden",
     width: "100%",
-
+    position: "relative",
+    borderRadius: "16px",
   },
   imageWrapper: {
     position: "relative",
@@ -31,6 +32,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    background: "linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65))",
   },
   textBox: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -71,8 +73,9 @@ export default function ScrollZoomImage({
   imageAlt = "תמונת רקע",
   minScale = 1,
   maxScale = 1.5,
-  title = "אפקט זום בגלילה",
-  subtitle = "גלול למטה כדי לראות את התמונה מתקרבת",
+  title,
+  subtitle,
+  showOverlay = false,
 }) {
   const [scale, setScale] = useState(minScale);
   const { width } = useWindowSize(); // קריאה לפונקציה כדי לעדכן את גובה התמונה אם יש צורך
@@ -111,17 +114,22 @@ export default function ScrollZoomImage({
 
   return (
     <div
-      style={width <= 550 ? styles.fixedContainerMobile : styles.fixedContainer}
+      style={{
+        ...(width <= 550 ? styles.fixedContainerMobile : styles.fixedContainer),
+        aspectRatio: width <= 550 ? "4 / 5" : "3 / 4",
+        minHeight: width <= 550 ? 320 : 480,
+      }}
     >
       <div style={styles.imageWrapper}>
         <img src={imageSrc} alt={imageAlt} style={imageStyle} />
-
-        <div style={styles.overlay}>
-          <div style={styles.textBox}>
-            <h1 style={styles.title}>{title}</h1>
-            <p style={styles.subtitle}>{subtitle}</p>
+        {(showOverlay || title || subtitle) && (
+          <div style={styles.overlay}>
+            <div style={styles.textBox}>
+              {title && <h1 style={styles.title}>{title}</h1>}
+              {subtitle && <p style={styles.subtitle}>{subtitle}</p>}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
