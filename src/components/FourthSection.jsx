@@ -1,8 +1,20 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { RowsPhotoAlbum } from "react-photo-album";
+import dynamic from "next/dynamic";
 import Socials from "./Socials";
 import useWindowSize from "@/hooks/useWindowSize";
 import "react-photo-album/rows.css";
+
+const RowsPhotoAlbum = dynamic(
+  () => import("react-photo-album").then((mod) => mod.RowsPhotoAlbum),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="gallery__placeholder">
+        <span>טוען את הגלריה…</span>
+      </div>
+    ),
+  }
+);
 
 const photos = [
   {
@@ -304,7 +316,7 @@ export default function FourthSection() {
     <section className="gallery">
       <div className="followus layout-container">
         <div className="followus__card">
-          <p className="followus__eyebrow">יש מצב שאתה עוד לא עוקב?</p>
+          <p className="followus__eyebrow">יש מצב שאתה עוד לא עוקב?!</p>
           <h2 className="followus__title">הצטרפו לקהילה שלנו</h2>
           <p className="followus__subtitle">
             קבלו הצצות מאחורי הקלעים, טיפים יומיומיים וטרנדים חמים לפני כולם.
@@ -386,7 +398,9 @@ export default function FourthSection() {
           <h2 className="gallery__headline" style={{fontSize: '32px'}}>הצצה לתהליך:</h2>
         </div>
 
-        <RowsPhotoAlbum photos={photos} targetRowHeight={600} />
+        <div className="gallery__album">
+          <RowsPhotoAlbum photos={photos} targetRowHeight={600} />
+        </div>
       </div>
     </section>
   );

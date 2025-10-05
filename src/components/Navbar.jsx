@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import Socials from "./Socials";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const Navbar = ({ contactRef }) => {
+const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { width } = useWindowSize();
   const isMobile = width < 550;
@@ -45,17 +45,6 @@ const Navbar = ({ contactRef }) => {
     "--logo-size": `${metrics.logo}px`,
   };
 
-  const handleScrollToContact = () => {
-    if (contactRef?.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" });
-      return;
-    }
-    const fallback = document.getElementById("contact-section");
-    if (fallback) {
-      fallback.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <nav className={navClassName} style={navStyle} aria-label="סרגל ניווט ראשי">
       <a className="navbar__brand" href="#top" aria-label="דף הבית">
@@ -67,13 +56,6 @@ const Navbar = ({ contactRef }) => {
       </a>
       <div className="navbar__actions">
         <Socials iconSize={isMobile ? 24 : 28} />
-        <button
-          type="button"
-          className="button button--primary button--compact navbar__cta"
-          onClick={handleScrollToContact}
-        >
-          לתאם שיחת ייעוץ
-        </button>
       </div>
     </nav>
   );

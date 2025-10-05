@@ -70,7 +70,7 @@ export default function Home() {
         />
       </Head>
   <div className="App" id="top">
-        <Navbar contactRef={contactRef} />
+  <Navbar />
 
         <Header contactRef={contactRef} />
         <Introduction contactRef={contactRef} />

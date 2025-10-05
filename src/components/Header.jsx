@@ -1,18 +1,59 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header({ contactRef }) {
   const [shouldAutoplay, setShouldAutoplay] = useState(false);
+  const [requiresUserInteraction, setRequiresUserInteraction] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updatePreference = () => setShouldAutoplay(!mediaQuery.matches);
+    const updatePreference = () => {
+      const autoplayAllowed = !mediaQuery.matches;
+      setShouldAutoplay(autoplayAllowed);
+      setRequiresUserInteraction(!autoplayAllowed);
+      setIsMuted(true);
+    };
     updatePreference();
     mediaQuery.addEventListener("change", updatePreference);
     return () => mediaQuery.removeEventListener("change", updatePreference);
   }, []);
+
+  useEffect(() => {
+    if (!shouldAutoplay || !videoRef.current) {
+      return;
+    }
+
+    const attemptAutoplay = async () => {
+      try {
+        await videoRef.current.play();
+        setRequiresUserInteraction(false);
+      } catch (error) {
+        setRequiresUserInteraction(true);
+      }
+    };
+
+    attemptAutoplay();
+  }, [shouldAutoplay]);
+
+  const handleManualPlay = async () => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    videoRef.current.muted = false;
+    setIsMuted(false);
+
+    try {
+      await videoRef.current.play();
+      setRequiresUserInteraction(false);
+    } catch (error) {
+      setRequiresUserInteraction(true);
+    }
+  };
 
   const scrollToComponent = () => {
     if (contactRef?.current) {
@@ -29,17 +70,28 @@ export default function Header({ contactRef }) {
     <header className="App-header" role="banner">
       <div className="App-header__media">
         <video
+          ref={videoRef}
           className="App-header__video"
-          loop={shouldAutoplay}
+          loop
           autoPlay={shouldAutoplay}
-          muted
+          muted={isMuted}
           playsInline
-          poster="/assets/images/videoframe_0.webp"
           preload="metadata"
+          controls={requiresUserInteraction || !isMuted}
         >
           <source src={"/assets/1.webm"} type="video/webm" />
           הדפדפן שלך אינו תומך בניגון וידאו.
         </video>
+        {requiresUserInteraction && (
+          <button
+            type="button"
+            className="App-header__playButton"
+            onClick={handleManualPlay}
+            aria-label="הפעלת הווידאו של האקדמיה"
+          >
+            ▶︎
+          </button>
+        )}
       </div>
       <div className="content App-logo-bg">
         <div className="App-header__inner layout-container">
